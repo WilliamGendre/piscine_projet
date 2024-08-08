@@ -13,10 +13,24 @@ ul {
   list-style: none;
 }
 
+section {
+  background-color: #3993DD;
+  padding: 2%;
+}
+
 section section {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+h1 {
+  font-size: 30px;
+  padding: 3%;
+}
+
+#navMenu {
+  margin-bottom: 3%;
 }
 
 #navMenu ul {
@@ -27,6 +41,24 @@ section section {
 
 #navMenu ul li {
   padding: 2% 10%;
+}
+
+#navMenu ul li a {
+  color: white;
+  background-color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+#navMenu ul li a:hover {
+  color: red;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 /*# sourceMappingURL=stylePublic.css.map */
