@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+section section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#navMenu ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#navMenu ul li {
+  padding: 2% 10%;
+}
+
+/*# sourceMappingURL=stylePublic.css.map */

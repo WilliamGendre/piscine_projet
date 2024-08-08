@@ -1,0 +1,15 @@
+section section{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#navMenu ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#navMenu ul li{
+  padding: 2% 10%;
+}

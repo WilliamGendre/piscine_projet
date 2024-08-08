@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\PublicController;
+namespace App\Controller\publicController;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Attribute\Route;

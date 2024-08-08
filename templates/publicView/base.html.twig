@@ -9,6 +9,35 @@
     <link rel="stylesheet" href="{{ asset('css/stylePublic.css') }}">
 </head>
 <body>
+    <header>
+        <section>
+            <section>
+                <div></div>
+                <h1>MyDesign</h1>
+                <nav></nav>
+            </section>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="">menu</a></li>
+                    <li><a href="">menu</a></li>
+                    <li>
+                        <ul>
+                            <li><a href="">Connexion</a></li>
+                            <li><a href="">Deconnexion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Rajouté action="{# {{ path('') }} #}" -->
+            <form method="post">
+                <input type="search">
+                <input type="submit">
+            </form>
+        </section>
+    </header>
 
+{% block content %}
+
+{% endblock %}
 </body>
 </html>
