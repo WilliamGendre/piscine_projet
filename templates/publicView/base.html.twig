@@ -13,7 +13,7 @@
     <header>
         <section>
             <section>
-                <div><img src="{{ asset('images/logo.jpg') }}" alt="logo"></div>
+                <div class="logo"><img src="{{ asset('images/logo.jpg') }}" alt="logo"></div>
                 <h1>MyDesign</h1>
                 <nav class="navReseauxSociaux">
                     <ul>
@@ -29,7 +29,7 @@
                     <li>
                         <ul>
                             <li><a href="">Connexion</a></li>
-                            <li><a href="">Deconnexion</a></li>
+                            <li><a href="">Inscription</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -37,7 +37,7 @@
             <!-- Rajouté action="{# {{ path('') }} #}" -->
             <form method="post">
                 <input type="search">
-                <input type="submit" value="rechercher">
+                <input type="submit" value="Rechercher">
             </form>
         </section>
         <div id="backgroundImage"></div>
@@ -46,5 +46,21 @@
 {% block content %}
 
 {% endblock %}
+
+    <footer>
+        <nav>
+            <ul>
+                <li><div class="logo"><img src="{{ asset('images/logo.jpg') }}" alt="logo"></div></li>
+                <li><a href="" class="navFooter">Condition générales</a></li>
+                <li><a href="" class="navFooter">Nous contacter</a></li>
+                <li>
+                    <ul>
+                        <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>
