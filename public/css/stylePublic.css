@@ -13,6 +13,10 @@ ul {
   list-style: none;
 }
 
+img {
+  width: 100%;
+}
+
 section {
   background-color: #3993DD;
   padding: 2%;
@@ -24,9 +28,28 @@ section section {
   align-items: center;
 }
 
+section section div {
+  width: 5%;
+}
+
 h1 {
-  font-size: 30px;
+  font-size: 50px;
   padding: 3%;
+}
+
+.navReseauxSociaux ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+i {
+  font-size: 25px;
+}
+
+i:hover {
+  color: white;
 }
 
 #navMenu {
@@ -59,6 +82,30 @@ form {
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+form input:first-of-type {
+  width: 300px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+form input:last-of-type {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+form input:last-of-type:hover {
+  background-color: black;
+  color: white;
+}
+
+#backgroundImage {
+  height: 100vh;
+  background-image: url("../images/outil_designer.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*# sourceMappingURL=stylePublic.css.map */
