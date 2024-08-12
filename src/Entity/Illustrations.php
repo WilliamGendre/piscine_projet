@@ -39,9 +39,9 @@ class Illustrations
     private ?users $user = null;
 
     /**
-     * @var Collection<int, category>
+     * @var Collection<int, Category>
      */
-    #[ORM\ManyToMany(targetEntity: category::class, inversedBy: 'illustration')]
+    #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'illustration')]
     private Collection $category;
 
     #[ORM\Column]
@@ -143,14 +143,14 @@ class Illustrations
     }
 
     /**
-     * @return Collection<int, category>
+     * @return Collection<int, Category>
      */
     public function getCategory(): Collection
     {
         return $this->category;
     }
 
-    public function addCategory(category $category): static
+    public function addCategory(Category $category): static
     {
         if (!$this->category->contains($category)) {
             $this->category->add($category);
@@ -159,7 +159,7 @@ class Illustrations
         return $this;
     }
 
-    public function removeCategory(category $category): static
+    public function removeCategory(Category $category): static
     {
         $this->category->removeElement($category);
 
