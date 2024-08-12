@@ -1,0 +1,48 @@
+{% extends 'publicView/base.html.twig' %}
+
+{% block title %}Nouvelle article{% endblock %}
+
+{% block content %}
+
+    <main class="mainFormeulaireController">
+
+        <section class="formulaireInsertUser">
+
+            <h2>Nouvelle utilisateur</h2>
+
+            <form method="post">
+
+                <label for="">
+                    <p>Nom</p>
+                    <input type="text" name="name">
+                </label>
+
+                <label for="">
+                    <p>Prénom</p>
+                    <input type="text" name="firstname">
+                </label>
+
+                <label for="">
+                    <p>Date de naissance</p>
+                    <input type="date" name="bornAt">
+                </label>
+
+                <label for="">
+                    <p>Email</p>
+                    <input type="email" name="email">
+                </label>
+
+                <label for="">
+                    <p>Mot de passe</p>
+                    <input type="password" name="password">
+                </label>
+
+                <input type="submit" name="valider" id="formSubmit">
+
+            </form>
+
+        </section>
+
+    </main>
+
+{% endblock %}

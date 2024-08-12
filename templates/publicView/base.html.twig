@@ -29,13 +29,13 @@
                     <li>
                         <ul>
                             <li><a href="">Connexion</a></li>
-                            <li><a href="">Inscription</a></li>
+                            <li><a href="{{ path('users_insert') }}">Inscription</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
             <!-- Rajouté action="{# {{ path('') }} #}" -->
-            <form method="post">
+            <form method="post" id="formHeader">
                 <input type="search">
                 <input type="submit" value="Rechercher">
             </form>

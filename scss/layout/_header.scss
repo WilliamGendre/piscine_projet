@@ -71,12 +71,12 @@ form input:first-of-type{
   border-radius: 10px;
 }
 
-form input:last-of-type{
+#formHeader input:last-of-type{
   padding: 5px;
   border-radius: 5px;
 }
 
-form input:last-of-type:hover{
+#formHeader input:last-of-type:hover{
   background-color: $black;
   color: $white;
 }
