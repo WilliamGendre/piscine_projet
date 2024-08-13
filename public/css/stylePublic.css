@@ -77,14 +77,14 @@ i:hover {
   color: red;
 }
 
-form {
+#formHeader {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-form input:first-of-type {
+#formHeader input:first-of-type {
   width: 300px;
   height: 30px;
   border-radius: 10px;
@@ -108,7 +108,7 @@ form input:first-of-type {
   background-size: cover;
 }
 
-#home {
+main {
   margin: 2% 10%;
 }
 
@@ -121,11 +121,42 @@ form input:first-of-type {
   text-align: center;
 }
 
-.formulaireInsertUser form {
+.formMain {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* Main page user */
+#pageUser div, #navUser ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2% 0;
+}
+
+#logoUser {
+  width: 10%;
+}
+
+#pageUser div a {
+  width: 220px;
+  padding: 2%;
+  text-align: center;
+  border-radius: 10px;
+  border: solid 3px black;
+}
+
+#pageUser div a:hover {
+  background-color: black;
+  color: white;
+}
+
+#navUser ul li p {
+  text-align: center;
+  border: solid 3px black;
+  width: 120px;
 }
 
 footer {

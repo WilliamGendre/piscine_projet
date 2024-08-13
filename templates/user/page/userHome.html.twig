@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil utilisateur{% endblock %}
+
+{% block content %}
+
+    <main>
+        <section id="pageUser">
+            <div>
+                <div id="logoUser"><img src="{{ asset('images/logo.jpg') }}" alt="logo"></div>
+                <a href="">Nouvelle article</a>
+            </div>
+            <nav id="navUser">
+                <ul>
+                    <li><p>User</p></li>
+                    <li>
+                        <ul>
+                            <li><a href="">Messagerie</a></li>
+                            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+
+{% endblock %}

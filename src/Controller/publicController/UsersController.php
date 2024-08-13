@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class UsersController extends AbstractController{
 
-    #[Route('/users/insert', name: 'users_insert')]
+    #[Route('/insert', name: 'users_insert')]
     public function insertUsers(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher){
         if ($request->getMethod() === 'POST') {
 
@@ -69,4 +69,6 @@ class UsersController extends AbstractController{
 
         return $this->render('publicView/page/users/insertUser.html.twig');
     }
+
+
 }
