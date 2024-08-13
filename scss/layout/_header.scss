@@ -29,7 +29,7 @@ i{
   font-size: 25px;
 }
 
-i:hover{
+.navReseauxSociaux i:hover{
   color: $white;
 }
 
@@ -87,4 +87,17 @@ i:hover{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.flashSuccess, .flashFail{
+  text-align: center;
+  padding: 2%;
+}
+
+.flashSuccess{
+  background-color: $green;
+}
+
+.flashFail{
+  background-color: $red;
 }

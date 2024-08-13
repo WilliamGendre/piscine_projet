@@ -41,6 +41,12 @@
             </form>
         </section>
         <div id="backgroundImage"></div>
+        {% for message in app.flashes('success') %}
+            <h2 class="flashSuccess">{{ message }}</h2>
+        {% endfor %}
+        {% for message in app.flashes('fail') %}
+            <h2 class="flashFail">{{ message }}</h2>
+        {% endfor %}
     </header>
 
 {% block content %}

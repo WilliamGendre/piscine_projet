@@ -48,4 +48,33 @@ main{
   text-align: center;
   border: solid 3px $black;
   width: 120px;
+  padding: 5% 0;
+  border-radius: 10px;
+}
+
+#reseauxUser{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+#reseauxUser i:hover{
+  color: $blue;
+}
+
+#reseauxUser li:first-of-type{
+  width: 160px;
+}
+
+#reseauxUser li:first-of-type a{
+  border: solid 3px $black;
+  text-align: center;
+  padding: 5% 25%;
+  border-radius: 10px;
+}
+
+#reseauxUser li:first-of-type a:hover{
+  background-color: $black;
+  color: $white;
 }

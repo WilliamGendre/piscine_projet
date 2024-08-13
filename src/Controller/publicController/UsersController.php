@@ -21,17 +21,27 @@ class UsersController extends AbstractController{
             $email = $request->request->get('email');
             $password = $request->request->get('password');
 
+            if(!$name){
+                $this->addFlash('fail', 'Il manque le nom');
+                return $this->render('publicView/page/users/insertUser.html.twig');
+            }
+
+            if(!$firstname){
+                $this->addFlash('fail', 'Il manque le prénom');
+                return $this->render('publicView/page/users/insertUser.html.twig');
+            }
+
             // Empêche de créer un user sans email
 
             if(!$email){
-                $this->addFlash('success', 'Il manque l\'adresse mail');
+                $this->addFlash('fail', 'Il manque l\'adresse mail');
                 return $this->render('publicView/page/users/insertUser.html.twig');
             }
 
             // Empêche de créer un user sans mot de passe
 
             if(!$password){
-                $this->addFlash('success', 'Il manque le mot de passe');
+                $this->addFlash('fail', 'Il manque le mot de passe');
                 return $this->render('publicView/page/users/insertUser.html.twig');
             }
 

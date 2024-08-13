@@ -48,7 +48,7 @@ i {
   font-size: 25px;
 }
 
-i:hover {
+.navReseauxSociaux i:hover {
   color: white;
 }
 
@@ -108,6 +108,19 @@ i:hover {
   background-size: cover;
 }
 
+.flashSuccess, .flashFail {
+  text-align: center;
+  padding: 2%;
+}
+
+.flashSuccess {
+  background-color: green;
+}
+
+.flashFail {
+  background-color: red;
+}
+
 main {
   margin: 2% 10%;
 }
@@ -157,6 +170,35 @@ main {
   text-align: center;
   border: solid 3px black;
   width: 120px;
+  padding: 5% 0;
+  border-radius: 10px;
+}
+
+#reseauxUser {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+#reseauxUser i:hover {
+  color: #3993DD;
+}
+
+#reseauxUser li:first-of-type {
+  width: 160px;
+}
+
+#reseauxUser li:first-of-type a {
+  border: solid 3px black;
+  text-align: center;
+  padding: 5% 25%;
+  border-radius: 10px;
+}
+
+#reseauxUser li:first-of-type a:hover {
+  background-color: black;
+  color: white;
 }
 
 footer {
@@ -180,6 +222,10 @@ footer nav ul {
 
 .navFooter:hover {
   color: red;
+}
+
+footer i:hover {
+  color: white;
 }
 
 /*# sourceMappingURL=stylePublic.css.map */
