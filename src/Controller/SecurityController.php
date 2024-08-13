@@ -12,6 +12,10 @@ class SecurityController extends AbstractController
     #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
+        // La redirection est permise grace à un changement dans le security.yaml
+        if ($this->isGranted('ROLE_USER')) {
+            return $this->redirectToRoute('user_home');
+        }
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 
