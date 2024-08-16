@@ -1,0 +1,43 @@
+{% extends 'user/baseUser.html.twig' %}
+
+{% block title %}Nouvelle illustration{% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <section class="formulaireInsertUser">
+
+            <h2>Nouvelle Illustration</h2>
+
+            <form method="post" id="insertIllustration" class="formMain">
+
+                <label for="">
+                    <p>Nom</p>
+                    <input type="text" name="name">
+                </label>
+
+                <label for="">
+                    <p>Description</p>
+                    <textarea name="description" id="" cols="30" rows="10"></textarea>
+                </label>
+
+                <label for="">
+                    <p>Illustration</p>
+                    <input type="text" name="thumbnail">
+                </label>
+
+                <label for="">
+                    <p>Dossier illustration</p>
+                    <input type="file" name="illustration">
+                </label>
+
+                <input type="submit" name="valider" id="formSubmit">
+
+            </form>
+
+        </section>
+
+    </main>
+
+{% endblock %}
