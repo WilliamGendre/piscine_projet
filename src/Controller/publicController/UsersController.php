@@ -17,6 +17,7 @@ class UsersController extends AbstractController{
 
             $name = $request->request->get('name');
             $firstname = $request->request->get('firstname');
+            $pseudo = $request->request->get('pseudo');
             //$bornAt = $request->request->get('bornAt');
             $email = $request->request->get('email');
             $password = $request->request->get('password');
@@ -60,6 +61,7 @@ class UsersController extends AbstractController{
                 $user->setPassword($hashedPassword);
                 $user->setName($name);
                 $user->setFirstname($firstname);
+                $user->setPseudo($pseudo);
                 //$user->setBornAt($bornAt ->format('Y-m-d'));
 
                 $entityManager->persist($user);

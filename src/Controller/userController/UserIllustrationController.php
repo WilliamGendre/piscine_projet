@@ -3,6 +3,7 @@
 namespace App\Controller\userController;
 
 use App\Entity\Illustrations;
+use App\Repository\UsersRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -46,6 +47,7 @@ class UserIllustrationController extends AbstractController
             $illustration->setDescription($description);
             $illustration->setThumbnail($thumbnail);
             $illustration->setIllustration($illustrationFile);
+            $illustration->setUser($this->getUser());
 
             $entityManager->persist($illustration);
             $entityManager->flush();

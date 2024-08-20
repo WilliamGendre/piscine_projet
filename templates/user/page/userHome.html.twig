@@ -12,7 +12,11 @@
             </div>
             <nav id="navUser">
                 <ul>
-                    <li><p>User</p></li>
+                    {% if app.user.pseudo %}
+                        <li><p>{{ app.user.pseudo }}</p></li>
+                    {% else %}
+                        <li><p>{{ app.user.firstname }}</p></li>
+                    {% endif %}
                     <li>
                         <ul id="reseauxUser">
                             <li><a href="">Messagerie</a></li>

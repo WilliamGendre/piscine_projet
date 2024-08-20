@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\UsersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -12,8 +13,10 @@ class SecurityController extends AbstractController
     #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
+        $currentUser = $this->getUser();
+
         // La redirection est permise grace à un changement dans le security.yaml
-        if ($this->isGranted('ROLE_USER')) {
+        if (null !== $currentUser && $this->isGranted('ROLE_USER')) {
             return $this->redirectToRoute('user_home');
         }
         // get the login error if there is one
