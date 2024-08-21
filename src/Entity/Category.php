@@ -19,13 +19,13 @@ class Category
     private ?string $libelle = null;
 
     /**
-     * @var Collection<int, Illustrations>
+     * @var Collection<int, Illustration>
      */
-    #[ORM\ManyToMany(targetEntity: Illustrations::class, mappedBy: 'category')]
+    #[ORM\ManyToMany(targetEntity: Illustration::class, mappedBy: 'category')]
     private Collection $illustration;
 
     /**
-     * @var Collection<int, Illustrations>
+     * @var Collection<int, Illustration>
      */
 
     public function __construct()
@@ -52,14 +52,14 @@ class Category
     }
 
     /**
-     * @return Collection<int, Illustrations>
+     * @return Collection<int, Illustration>
      */
     public function getIllustration(): Collection
     {
         return $this->illustration;
     }
 
-    public function addIllustration(Illustrations $illustration): static
+    public function addIllustration(Illustration $illustration): static
     {
         if (!$this->illustration->contains($illustration)) {
             $this->illustration->add($illustration);
@@ -69,7 +69,7 @@ class Category
         return $this;
     }
 
-    public function removeIllustration(Illustrations $illustration): static
+    public function removeIllustration(Illustration $illustration): static
     {
         if ($this->illustration->removeElement($illustration)) {
             $illustration->removeCategory($this);

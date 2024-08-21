@@ -26,6 +26,14 @@
                     </li>
                 </ul>
             </nav>
+
+            <article>
+                {% for illustration in illustrations %}
+                    <div>
+                        <img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}">
+                    </div>
+                {% endfor %}
+            </article>
         </section>
     </main>
 

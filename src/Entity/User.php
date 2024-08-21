@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Repository\UsersRepository;
+use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -10,9 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-#[ORM\Entity(repositoryClass: UsersRepository::class)]
+#[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
-class Users implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -47,13 +47,13 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $pseudo = null;
 
     /**
-     * @var Collection<int, Illustrations>
+     * @var Collection<int, Illustration>
      */
-    #[ORM\OneToMany(targetEntity: Illustrations::class, mappedBy: 'user')]
+    #[ORM\OneToMany(targetEntity: Illustration::class, mappedBy: 'user')]
     private Collection $illustration;
 
     /**
-     * @var Collection<int, Illustrations>
+     * @var Collection<int, Illustration>
      */
 
     public function __construct()
@@ -186,14 +186,14 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, Illustrations>
+     * @return Collection<int, Illustration>
      */
     public function getIllustration(): Collection
     {
         return $this->illustration;
     }
 
-    public function addIllustration(Illustrations $illustration): static
+    public function addIllustration(Illustration $illustration): static
     {
         if (!$this->illustration->contains($illustration)) {
             $this->illustration->add($illustration);
@@ -203,7 +203,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function removeIllustration(Illustrations $illustration): static
+    public function removeIllustration(Illustration $illustration): static
     {
         if ($this->illustration->removeElement($illustration)) {
             // set the owning side to null (unless already changed)

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller\publicController;
 
-use App\Repository\UsersRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Attribute\Route;
 

@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\IllustrationsRepository;
+use App\Repository\IllustrationRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: IllustrationsRepository::class)]
-class Illustrations
+#[ORM\Entity(repositoryClass: IllustrationRepository::class)]
+class Illustration
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -36,7 +36,7 @@ class Illustrations
 
     #[ORM\ManyToOne(inversedBy: 'illustration')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?users $user = null;
+    private ?User $user = null;
 
     /**
      * @var Collection<int, Category>
@@ -138,12 +138,12 @@ class Illustrations
         return $this;
     }
 
-    public function getUser(): ?users
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUser(?users $user): static
+    public function setUser(?User $user): static
     {
         $this->user = $user;
 
