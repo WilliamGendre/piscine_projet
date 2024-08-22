@@ -29,9 +29,11 @@
 
             <article>
                 {% for illustration in illustrations %}
-                    <div>
-                        <img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}">
-                    </div>
+                    {% if illustration.user == user %}
+                        <div class="thumbnail">
+                            <img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}">
+                        </div>
+                    {% endif %}
                 {% endfor %}
             </article>
         </section>

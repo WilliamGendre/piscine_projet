@@ -201,6 +201,18 @@ main {
   color: white;
 }
 
+.thumbnail {
+  width: 20%;
+}
+
+article {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 footer {
   background-color: #3993DD;
   padding: 2%;
