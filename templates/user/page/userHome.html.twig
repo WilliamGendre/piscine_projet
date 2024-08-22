@@ -6,9 +6,9 @@
 
     <main>
         <section id="pageUser">
-            <div>
+            <div id="newIllustration">
                 <div id="logoUser"><img src="{{ asset('images/logo.jpg') }}" alt="logo"></div>
-                <a href="{{ path('user_insert_illustration') }}">Nouvelle article</a>
+                <a href="{{ path('user_insert_illustration') }}">Nouvelle illustration</a>
             </div>
             <nav id="navUser">
                 <ul>
@@ -27,11 +27,12 @@
                 </ul>
             </nav>
 
-            <article>
+            <h2 class="userHome">Toutes les créations</h2>
+            <article id="userThumbnail">
                 {% for illustration in illustrations %}
                     {% if illustration.user == user %}
                         <div class="thumbnail">
-                            <img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}">
+                            <a href=""><img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}"></a>
                         </div>
                     {% endif %}
                 {% endfor %}

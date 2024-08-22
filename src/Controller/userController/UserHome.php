@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Controller\userController;
 
 use App\Repository\IllustrationRepository;
-use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Attribute\Route;
 

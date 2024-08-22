@@ -6,14 +6,19 @@
 
     <main id="home">
         <section>
-            <article>
-                <h2>Dernière mise en ligne</h2>
+            <h2>Dernière mise en ligne</h2>
+            <article class="illustrationHome">
+                {% for illustration in illustrations %}
+                    <div class="thumbnail">
+                        <a href=""><img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}"></a>
+                    </div>
+                {% endfor %}
             </article>
-            <article>
-                <h2>Les plus visités de la semaines</h2>
+            <h2>Les plus visités de la semaines</h2>
+            <article class="illustrationHome">
             </article>
-            <article>
-                <h2>Les plus visités</h2>
+            <h2>Les plus visités</h2>
+            <article class="illustrationHome">
             </article>
         </section>
     </main>

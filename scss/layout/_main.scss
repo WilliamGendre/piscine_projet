@@ -2,9 +2,15 @@ main{
   margin: 2% 10%;
 }
 
+/*----------  Home  ----------*/
+
 #home h2{
   background-color: $black;
   color: $white;
+}
+
+.illustrationHome{
+  @include flex(none);
 }
 
 .formulaireInsertUser h2{
@@ -31,7 +37,7 @@ main{
   width: 10%;
 }
 
-#pageUser div a{
+#pageUser #newIllustration a{
   width: 220px;
   padding: 2%;
   text-align: center;
@@ -39,7 +45,7 @@ main{
   border: solid 3px $black;
 }
 
-#pageUser div a:hover{
+#pageUser #newIllustration a:hover{
   background-color: $black;
   color: $white;
 }
@@ -83,6 +89,13 @@ main{
   width: 20%;
 }
 
-article{
-  @include flex;
+#userThumbnail{
+  @include flex(none);
+}
+
+.userHome{
+  display: inline;
+  background-color: $black;
+  color: $white;
+  padding: 0.5% 1%;
 }
