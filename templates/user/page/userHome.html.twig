@@ -30,11 +30,13 @@
             <h2 class="userHome">Toutes les créations</h2>
             <article id="userThumbnail">
                 {% for illustration in illustrations %}
-                    {% if illustration.user == user %}
+                    {# {% if illustration.user == user %}  #}
                         <div class="thumbnail">
-                            <a href=""><img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}"></a>
+                            <a href="{{ path('user_illustration', {'id': illustration.id}) }}">
+                                <img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}">
+                            </a>
                         </div>
-                    {% endif %}
+                    {# {% endif %}  #}
                 {% endfor %}
             </article>
         </section>

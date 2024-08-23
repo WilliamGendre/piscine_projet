@@ -13,6 +13,14 @@ class UserHome extends AbstractController{
     #[Route('/user', name:'user_home')]
     public function userHome(IllustrationRepository $illustrationsRepository){
         $currentUser = $this->getUser();
-        return $this->render('user/page/userHome.html.twig', ['illustrations' => $illustrationsRepository->findAll(), 'user' => $currentUser]);
+        $illustrations = [];
+        //dd($illustrationsRepository->findAll());
+        foreach ($illustrationsRepository->findAll() as $illustration){
+            if($illustration->getUser() === $currentUser){
+                $illustrations[] = $illustration;
+            }
+        }
+
+        return $this->render('user/page/userHome.html.twig', ['illustrations' => $illustrations, 'user' => $currentUser]);
     }
 }

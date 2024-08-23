@@ -1,0 +1,19 @@
+{% extends 'user/baseUser.html.twig' %}
+
+{% block title %}Nouvelle illustration{% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <section class="formulaireInsertUser">
+
+            <h2>Modification de l'illustration</h2>
+
+            {{ form(illustrationUpdateForm) }}
+
+        </section>
+
+    </main>
+
+{% endblock %}

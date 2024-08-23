@@ -18,7 +18,7 @@ class UserController extends AbstractController{
             $name = $request->request->get('name');
             $firstname = $request->request->get('firstname');
             $pseudo = $request->request->get('pseudo');
-            //$bornAt = $request->request->get('bornAt');
+            $bornAt = $request->request->get('bornAt');
             $email = $request->request->get('email');
             $password = $request->request->get('password');
 
@@ -28,6 +28,11 @@ class UserController extends AbstractController{
             }
 
             if(!$firstname){
+                $this->addFlash('fail', 'Il manque le prénom');
+                return $this->render('publicView/page/user/insertUser.html.twig');
+            }
+
+            if(!$bornAt){
                 $this->addFlash('fail', 'Il manque le prénom');
                 return $this->render('publicView/page/user/insertUser.html.twig');
             }
@@ -50,11 +55,9 @@ class UserController extends AbstractController{
 
             $user = new User();
 
-//            try {
-
-                // Permet de hacher le mot de passe pour plus de sécurité
 
                 $hashedPassword = $passwordHasher->hashPassword($user, $password);
+                $bornAtDate = new \DateTime($bornAt);
 
                 $user->setEmail($email);
                 $user->setRoles(['ROLE_USER']);
@@ -62,19 +65,13 @@ class UserController extends AbstractController{
                 $user->setName($name);
                 $user->setFirstname($firstname);
                 $user->setPseudo($pseudo);
-                //$user->setBornAt($bornAt ->format('Y-m-d'));
+                $user->setBornAt($bornAtDate);
 
                 $entityManager->persist($user);
 //                dd($user);
                 $entityManager->flush();
 
                 $this->addFlash('success', 'L\'utilisateur à bien été créé');
-
-//            } catch (\Exception $exception ) {
-
-//                $this->addFlash('error', $exception->getMessage());
-
-//            }
 
 
         }

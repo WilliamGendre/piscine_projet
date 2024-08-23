@@ -17,18 +17,12 @@ class Illustration
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $illustration = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $thumbnail = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column]
+    #[ORM\Column (nullable: true)]
     private ?int $limitAge = null;
 
     #[ORM\Column(nullable: true)]
@@ -44,7 +38,7 @@ class Illustration
     #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'illustration')]
     private Collection $category;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?int $views = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
@@ -52,6 +46,12 @@ class Illustration
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $updatedAt = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $illustration = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $thumbnail = null;
 
     public function __construct()
     {
@@ -64,30 +64,6 @@ class Illustration
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getIllustration(): ?string
-    {
-        return $this->illustration;
-    }
-
-    public function setIllustration(string $illustration): static
-    {
-        $this->illustration = $illustration;
-
-        return $this;
-    }
-
-    public function getThumbnail(): ?string
-    {
-        return $this->thumbnail;
-    }
-
-    public function setThumbnail(string $thumbnail): static
-    {
-        $this->thumbnail = $thumbnail;
-
-        return $this;
     }
 
     public function getName(): ?string
@@ -206,6 +182,30 @@ class Illustration
     public function setUpdatedAt(\DateTimeInterface $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getIllustration(): ?string
+    {
+        return $this->illustration;
+    }
+
+    public function setIllustration(?string $illustration): static
+    {
+        $this->illustration = $illustration;
+
+        return $this;
+    }
+
+    public function getThumbnail(): ?string
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail(?string $thumbnail): static
+    {
+        $this->thumbnail = $thumbnail;
 
         return $this;
     }

@@ -10,7 +10,9 @@
             <article class="illustrationHome">
                 {% for illustration in illustrations %}
                     <div class="thumbnail">
-                        <a href=""><img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}"></a>
+                        <a href="{{ path('user_illustration', {'id': illustration.id}) }}">
+                            <img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}">
+                        </a>
                     </div>
                 {% endfor %}
             </article>
