@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller\publicController;
 
-use App\Entity\Illustration;
 use App\Repository\IllustrationRepository;
-use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Attribute\Route;
 

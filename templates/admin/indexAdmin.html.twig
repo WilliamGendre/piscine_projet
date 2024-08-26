@@ -1,0 +1,38 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Profile utilisateur{% endblock %}
+
+{% block content %}
+
+    <main>
+        <section>
+            <h2 id="titre_tableau_admin">Tableau d'utilisateur</h2>
+            <table width="100%" border="1">
+                <thead>
+                <td>Nom</td>
+                <td>Prénom</td>
+                <td>Pseudo</td>
+                <td>Date de naissance</td>
+                <td>E-mail</td>
+                <td>Modifier utilisateur</td>
+                <td>Supprimer utilisateur</td>
+                </thead>
+
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td><h3>{{user.name }}</h3></td>
+                            <td><h3>{{ user.firstname }}</h3></td>
+                            <td><h3>{{ user.pseudo }}</h3></td>
+                            <td><p>{{ user.bornAt|date('d/m/Y') }}</p></td>
+                            <td><p>{{ user.email }}</p></td>
+                            <td><p><a href="">Modifier</a></p></td>
+                            <td><p><a href="">Supprimer</a></p></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+{% endblock %}

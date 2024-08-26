@@ -160,7 +160,7 @@ main {
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0;
+  gap: 5px;
   margin: 2% 0;
 }
 
@@ -192,7 +192,9 @@ main {
 #reseauxUser {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
   gap: 5px;
 }
 
@@ -245,7 +247,43 @@ main {
   gap: 2%;
 }
 
-/*---------- Delete ----------*/
+#titre_tableau_admin {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+table {
+  text-align: center;
+}
+
+footer {
+  background-color: #3993DD;
+  padding: 2%;
+}
+
+footer nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+}
+
+.navFooter {
+  color: white;
+  background-color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.navFooter:hover {
+  color: red;
+}
+
+footer i:hover {
+  color: white;
+}
+
 .userIllustration {
   position: relative;
 }
@@ -283,33 +321,6 @@ main {
 
 .trueDelete a:last-of-type {
   background-color: #3993DD;
-}
-
-footer {
-  background-color: #3993DD;
-  padding: 2%;
-}
-
-footer nav ul {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 5px;
-}
-
-.navFooter {
-  color: white;
-  background-color: black;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
-.navFooter:hover {
-  color: red;
-}
-
-footer i:hover {
-  color: white;
 }
 
 /*# sourceMappingURL=stylePublic.css.map */

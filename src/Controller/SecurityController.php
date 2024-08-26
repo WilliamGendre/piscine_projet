@@ -15,10 +15,15 @@ class SecurityController extends AbstractController
     {
         $currentUser = $this->getUser();
 
+        if (null !== $currentUser && $this->isGranted('ROLE_ADMIN')) {
+            return $this->redirectToRoute('index_admin');
+        }
+
         // La redirection est permise grace à un changement dans le security.yaml
         if (null !== $currentUser && $this->isGranted('ROLE_USER')) {
             return $this->redirectToRoute('user_home');
         }
+
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 
