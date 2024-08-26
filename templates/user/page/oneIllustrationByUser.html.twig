@@ -1,0 +1,24 @@
+{% extends 'user/baseUser.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+    <main>
+        <section class="userIllustration">
+            <div><img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}"></div>
+            <div>
+            <h3>{{ illustration.name }}</h3>
+                {% if illustration.user == user %}
+                    <div id="updateDelete">
+                        <p><a href="{{ path('user_update_illustration', {'id': illustration.id}) }}">Modifier</a></p>
+                        <p data-id="{{ illustration.id }}" class="falseDelete">Supprimer</p>
+                        <p class="trueDelete" id="deleteIllustration{{ illustration.id }}">êtes-vous sûr de vouloir supprimer l'article?<br><br><a href="{{ path('user_delete_illustration', {id: illustration.id}) }}">Oui</a>
+                            <a href="{{ path('user_home') }}">Non</a></p>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

@@ -18,10 +18,17 @@ class UserIllustrationController extends AbstractController
 {
 
     // Affichage d'une illustration
-    #[Route('/user/illustration/{id}', name: 'user_illustration')]
+    #[Route('/illustrationHome/{id}', name: 'public_illustration')]
     public function oneIllustration(int $id, IllustrationRepository $illustrationRepository){
         $illustration = $illustrationRepository->find($id);
-        return $this->render('user/page/oneIllustration.html.twig', ['illustration' => $illustration]);
+        return $this->render('publicView/page/public/oneIllustration.html.twig', ['illustration' => $illustration]);
+    }
+
+    #[Route('/user/illustration/{id}', name: 'user_illustration_one')]
+    public function oneIllustrationByUser(int $id, IllustrationRepository $illustrationRepository){
+        $currentUser = $this->getUser();
+        $illustration = $illustrationRepository->find($id);
+        return $this->render('user/page/oneIllustrationByUser.html.twig', ['illustration' => $illustration, 'user' => $currentUser]);
     }
 
     // Ajout d'une nouvelle illustration par l'utilsateur
@@ -121,5 +128,22 @@ class UserIllustrationController extends AbstractController
         }
 
         return $this->render('user/page/updateIllustration.html.twig', ['illustrationUpdateForm' => $illustrationUpdateForm->createView()]);
+    }
+
+    #[Route ('user/delete/illustration/{id}', name: 'user_delete_illustration')]
+    public function deleteIllustration(int $id, IllustrationRepository $illustrationRepository, EntityManagerInterface $entityManager){
+
+        $currentUser = $this->getUser();
+
+        $illustration = $illustrationRepository->find($id);
+
+        if ($illustration->getUser() !== $currentUser){
+            return $this->render('user/page/accesInterdit.html.twig');
+        }
+
+        $entityManager->remove($illustration);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('user_home');
     }
 }

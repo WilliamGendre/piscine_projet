@@ -1,6 +1,6 @@
-{% extends 'user/baseUser.html.twig' %}
+{% extends 'publicView/base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}{{ illustration.name }}{% endblock %}
 
 {% block content %}
 
@@ -8,7 +8,6 @@
         <section>
             <div><img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}"></div>
             <h3>{{ illustration.name }}</h3>
-            <h4><a href="{{ path('user_update_illustration', {'id': illustration.id}) }}">Modifier</a></h4>
         </section>
     </main>
 

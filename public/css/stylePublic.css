@@ -157,7 +157,10 @@ main {
 #pageUser div, #navUser ul {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
   margin: 2% 0;
 }
 
@@ -231,6 +234,55 @@ main {
   background-color: black;
   color: white;
   padding: 0.5% 1%;
+}
+
+.userIllustration div:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+/*---------- Delete ----------*/
+.userIllustration {
+  position: relative;
+}
+
+#updateDelete {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+  width: 150px;
+}
+
+.trueDelete {
+  display: none;
+  background-color: white;
+  border-radius: 20px;
+  position: absolute;
+  padding: 8%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.trueDelete a {
+  padding: 5% 10%;
+  border-radius: 20px;
+  margin: 0 28px;
+}
+
+.trueDelete a:first-of-type {
+  background-color: red;
+}
+
+.trueDelete a:last-of-type {
+  background-color: #3993DD;
 }
 
 footer {

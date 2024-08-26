@@ -32,7 +32,7 @@
                 {% for illustration in illustrations %}
                     {# {% if illustration.user == user %}  #}
                         <div class="thumbnail">
-                            <a href="{{ path('user_illustration', {'id': illustration.id}) }}">
+                            <a href="{{ path('user_illustration_one', {'id': illustration.id}) }}">
                                 <img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}">
                             </a>
                         </div>
