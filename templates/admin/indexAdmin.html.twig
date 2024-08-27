@@ -5,29 +5,33 @@
 {% block content %}
 
     <main>
-        <section>
+        <section class="userIllustration">
             <h2 id="titre_tableau_admin">Tableau d'utilisateur</h2>
             <table width="100%" border="1">
                 <thead>
-                <td>Nom</td>
-                <td>Prénom</td>
-                <td>Pseudo</td>
-                <td>Date de naissance</td>
-                <td>E-mail</td>
-                <td>Modifier utilisateur</td>
-                <td>Supprimer utilisateur</td>
+                    <th><h3>Nom</h3></th>
+                    <th><h3>Prénom</h3></th>
+                    <th><h3>Pseudo</h3></th>
+                    <th><h3>Date de naissance</h3></th>
+                    <th><h3>E-mail</h3></th>
+                    <th><h3>Modifier utilisateur</h3></th>
+                    <th><h3>Supprimer utilisateur</h3></th>
                 </thead>
 
                 <tbody>
                     {% for user in users %}
                         <tr>
-                            <td><h3>{{user.name }}</h3></td>
-                            <td><h3>{{ user.firstname }}</h3></td>
-                            <td><h3>{{ user.pseudo }}</h3></td>
+                            <td><h4>{{user.name }}</h4></td>
+                            <td><h4>{{ user.firstname }}</h4></td>
+                            <td><h4>{{ user.pseudo }}</h4></td>
                             <td><p>{{ user.bornAt|date('d/m/Y') }}</p></td>
                             <td><p>{{ user.email }}</p></td>
                             <td><p><a href="">Modifier</a></p></td>
-                            <td><p><a href="">Supprimer</a></p></td>
+                            <td>
+                                <p data-id="{{ user.id }}" class="falseDelete">Supprimer</p>
+                                <p class="trueDelete" id="deleteIllustration{{ user.id }}">êtes-vous sûr de vouloir supprimer l'utilisater?<br><br>
+                                <a href="{{ path('admin_deleteUser', {'id': user.id}) }}">Oui</a><a href="{{ path('index_admin') }}">Non</a></p>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>
