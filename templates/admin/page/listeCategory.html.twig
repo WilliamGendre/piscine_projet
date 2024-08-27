@@ -6,6 +6,8 @@
 
     <main>
         <section class="userIllustration">
+            <h2>Liste des catégories</h2>
+            <p><a href="{{ path('admin_insert_category') }}">Nouvelle Catégorie</a></p>
             <table width="100%" border="1">
                 <thead>
                     <th><h3>Nom catégorie</h3></th>
@@ -17,7 +19,7 @@
                     {% for category in categorys %}
                         <tr>
                             <td>{{ category.libelle }}</td>
-                            <td></td>
+                            <td><p><a href="{{ path('admin_update_category', {'id': category.id}) }}">Modifier</a></p></td>
                             <td><p data-id="{{ category.id }}" class="falseDelete">Supprimer</p>
                                 <p class="trueDelete" id="deleteIllustration{{ category.id }}">êtes-vous sûr de vouloir supprimer la category?<br><br>
                                 <a href="{{ path('admin_delete_category', {'id': category.id}) }}">Oui</a><a href="{{ path('admin_category') }}">Non</a></p>

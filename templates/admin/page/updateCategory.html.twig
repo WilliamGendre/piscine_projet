@@ -1,0 +1,20 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Modification catégorie{% endblock %}
+
+{% block content %}
+
+    <main>
+        <section>
+            <h2>Modification d'une catégorie</h2>
+            <form method="post">
+                <label for="">
+                    <input type="text" name="libelle" value="{{ category.libelle }}">
+                </label>
+
+                <input type="submit" value="Entrer">
+            </form>
+        </section>
+    </main>
+
+{% endblock %}

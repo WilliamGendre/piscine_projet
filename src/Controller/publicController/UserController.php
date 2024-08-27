@@ -68,11 +68,9 @@ class UserController extends AbstractController{
                 $user->setBornAt($bornAtDate);
 
                 $entityManager->persist($user);
-//                dd($user);
                 $entityManager->flush();
 
                 $this->addFlash('success', 'L\'utilisateur à bien été créé');
-
 
         }
 
