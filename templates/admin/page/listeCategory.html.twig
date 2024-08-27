@@ -1,0 +1,32 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Liste catégories{% endblock %}
+
+{% block content %}
+
+    <main>
+        <section class="userIllustration">
+            <table width="100%" border="1">
+                <thead>
+                    <th><h3>Nom catégorie</h3></th>
+                    <th><h3>Modifier</h3></th>
+                    <th><h3>Supprimer</h3></th>
+                </thead>
+
+                <tbody>
+                    {% for category in categorys %}
+                        <tr>
+                            <td>{{ category.libelle }}</td>
+                            <td></td>
+                            <td><p data-id="{{ category.id }}" class="falseDelete">Supprimer</p>
+                                <p class="trueDelete" id="deleteIllustration{{ category.id }}">êtes-vous sûr de vouloir supprimer la category?<br><br>
+                                <a href="{{ path('admin_delete_category', {'id': category.id}) }}">Oui</a><a href="{{ path('admin_category') }}">Non</a></p>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+{% endblock %}
