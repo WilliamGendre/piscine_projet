@@ -15,10 +15,6 @@ class SecurityController extends AbstractController
     {
         $currentUser = $this->getUser();
 
-        if (null !== $currentUser && $this->isGranted('ROLE_ADMIN')) {
-            return $this->redirectToRoute('index_admin');
-        }
-
         // La redirection est permise grace à un changement dans le security.yaml
         if (null !== $currentUser && $this->isGranted('ROLE_USER')) {
             return $this->redirectToRoute('user_home');
@@ -31,6 +27,28 @@ class SecurityController extends AbstractController
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error,
+        ]);
+    }
+
+    #[Route(path: '/admin/login', name: 'app_admin_login')]
+    public function loginAdmin(AuthenticationUtils $authenticationUtils): Response
+    {
+        $currentUser = $this->getUser();
+
+        // La redirection est permise grace à un changement dans le security.yaml
+        if (null !== $currentUser && $this->isGranted('ROLE_ADMIN')) {
+            return $this->redirectToRoute('index_admin');
+        }
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        return $this->render('security/loginAdmin.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,
         ]);
