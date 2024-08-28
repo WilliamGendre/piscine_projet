@@ -18,9 +18,11 @@ class IllustrationType extends AbstractType
     {
         $builder
             ->add('illustration', FileType::class,[
-                'mapped' => false,])
+                'mapped' => false,
+                'required' => false])
             ->add('thumbnail', FileType::class,[
-                'mapped' => false,])
+                'mapped' => false,
+                'required' => false])
             ->add('name')
             ->add('description')
             /*->add('limitAge')

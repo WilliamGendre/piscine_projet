@@ -83,6 +83,8 @@ class UserIllustrationController extends AbstractController
 
         $illustration = $illustrationRepository->find($id);
 
+        $existIllustration  = $illustration->getIllustration();
+
         if ($illustration->getUser() !== $currentUser){
             return $this->render('user/page/accesInterdit.html.twig');
         }
@@ -118,11 +120,14 @@ class UserIllustrationController extends AbstractController
                 $illustration->setUser($this->getUser());
                 $illustration->setUpdatedAt(new \DateTime('now'));
 
-                $entityManager->persist($illustration);
-                $entityManager->flush();
-
-                $this->addFlash('success', 'L\'illustration à bien été modifié');
+            }else{
+                $illustration->setIllustration($existIllustration);
             }
+
+            $entityManager->persist($illustration);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'L\'illustration à bien été modifié');
         }
 
         return $this->render('user/page/updateIllustration.html.twig', ['illustrationUpdateForm' => $illustrationUpdateForm->createView()]);

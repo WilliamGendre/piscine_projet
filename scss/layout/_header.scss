@@ -4,9 +4,7 @@ header section{
 }
 
 section section{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  @include flex();
 }
 
 .logo{
@@ -19,10 +17,7 @@ h1{
 }
 
 .navReseauxSociaux ul{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 5px;
+  @include flex(space-around, row, center, 5px);
 }
 
 i{
@@ -38,13 +33,16 @@ i{
 }
 
 #navMenu ul{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  @include flex();
+}
+
+#connexionInscription{
+  @include flex();
+  width: 290px;
 }
 
 #navMenu ul li{
-  padding: 2% 10%;
+  padding: 2% 5%;
 }
 
 #navMenu ul li a{
@@ -59,10 +57,7 @@ i{
 }
 
 #formHeader{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  @include flex(center, row, center, 10px);
 }
 
 #formHeader input:first-of-type{

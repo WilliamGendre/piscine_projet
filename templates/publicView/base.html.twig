@@ -25,11 +25,20 @@
             <nav id="navMenu">
                 <ul>
                     <li><a href="{{ path('index') }}">Accueil</a></li>
-                    <li><a href="">menu</a></li>
+                    <li><a href="">Catégorie</a></li>
+                    {% if app.user %}
+                        <li><a href="{{ path('user_home')}}">Profil</a></li>
+                    {% endif %}
                     <li>
                         <ul>
-                            <li><a href="{{ path('app_login') }}">Connexion</a></li>
-                            <li><a href="{{ path('user_insert') }}">Inscription</a></li>
+                            {% if app.user %}
+                                <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
+                            {% else %}
+                                <div id="connexionInscription">
+                                    <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                                    <li><a href="{{ path('user_insert') }}">Inscription</a></li>
+                                </div>
+                            {% endif %}
                         </ul>
                     </li>
                 </ul>
@@ -68,5 +77,6 @@
             </ul>
         </nav>
     </footer>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

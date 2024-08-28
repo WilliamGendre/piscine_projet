@@ -25,7 +25,10 @@ header section {
 section section {
   display: flex;
   justify-content: space-around;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
 }
 
 .logo {
@@ -40,7 +43,9 @@ h1 {
 .navReseauxSociaux ul {
   display: flex;
   justify-content: space-around;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
   gap: 5px;
 }
 
@@ -59,11 +64,24 @@ i {
 #navMenu ul {
   display: flex;
   justify-content: space-around;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+#connexionInscription {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+  width: 290px;
 }
 
 #navMenu ul li {
-  padding: 2% 10%;
+  padding: 2% 5%;
 }
 
 #navMenu ul li a {
@@ -80,7 +98,9 @@ i {
 #formHeader {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -125,7 +145,7 @@ main {
   margin: 2% 10%;
 }
 
-/*----------  Home  ----------*/
+/*--------------------------------------------------  Home  --------------------------------------------------*/
 #home h2 {
   background-color: black;
   color: white;
@@ -153,7 +173,7 @@ main {
   gap: 2%;
 }
 
-/* Main page user */
+/*--------------------------------------------------  User  --------------------------------------------------*/
 #pageUser div, #navUser ul {
   display: flex;
   justify-content: space-between;
@@ -181,11 +201,11 @@ main {
   color: white;
 }
 
-#navUser ul li p {
+#navUser ul li p, .userIllustration h3 {
   text-align: center;
   border: solid 3px black;
   width: 120px;
-  padding: 5% 0;
+  padding: 5px 0;
   border-radius: 10px;
 }
 
@@ -257,6 +277,45 @@ table {
   text-align: center;
 }
 
+/*--------------------------------------------------  Connexion  --------------------------------------------------*/
+.formMain {
+  margin-bottom: 3%;
+}
+
+.formMain button {
+  margin-top: 1%;
+}
+
+/*--------------------------------------------------  Illustration  --------------------------------------------------*/
+.userIllustration h3 {
+  margin: 15px 0;
+}
+
+#contentIllustration {
+  border: solid 3px black;
+  padding: 5px 0;
+  border-radius: 10px;
+}
+
+#updateDelete p:first-of-type, #updateDelete p:nth-of-type(2) {
+  text-align: center;
+  border: solid 3px black;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#updateDelete p:first-of-type {
+  background-color: #3993DD;
+}
+
+#updateDelete p:nth-of-type(2) {
+  background-color: red;
+}
+
+#updateDelete p:nth-of-type(2):hover, #updateDelete p a:hover {
+  color: white;
+}
+
 footer {
   background-color: #3993DD;
   padding: 2%;
@@ -295,7 +354,7 @@ footer i:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 2%;
-  width: 150px;
+  width: 180px;
 }
 
 .trueDelete {
@@ -321,6 +380,36 @@ footer i:hover {
 
 .trueDelete a:last-of-type {
   background-color: #3993DD;
+}
+
+@media screen and (max-width: 480px) {
+  /*------------------------------ Header ------------------------------*/
+  h1 {
+    font-size: 30px;
+  }
+  .logo {
+    width: 40px;
+  }
+  #navMenu ul li {
+    padding: 2% 2%;
+  }
+  #backgroundImage {
+    height: 20vh;
+  }
+  #navMenu ul li:last-of-type {
+    margin-top: 10px;
+  }
+  /*------------------------------ Main Home ------------------------------*/
+  .thumbnail {
+    width: 48%;
+  }
+  .thumbnail:last-of-type {
+    display: none;
+  }
+  /*------------------------------ Footer ------------------------------*/
+  .navFooter {
+    padding: 10px 5px;
+  }
 }
 
 /*# sourceMappingURL=stylePublic.css.map */

@@ -1,0 +1,39 @@
+@media screen and (max-width: 480px) {
+  /*------------------------------ Header ------------------------------*/
+
+  h1{
+    font-size: 30px;
+  }
+
+  .logo{
+    width: 40px;
+  }
+
+  #navMenu ul li{
+    padding: 2% 2%;
+  }
+
+  #backgroundImage{
+    height: 20vh;
+  }
+
+  #navMenu ul li:last-of-type{
+    margin-top: 10px;
+  }
+
+  /*------------------------------ Main Home ------------------------------*/
+
+  .thumbnail{
+    width: 48%;
+  }
+
+  .thumbnail:last-of-type{
+    display: none;
+  }
+
+  /*------------------------------ Footer ------------------------------*/
+
+  .navFooter{
+    padding: 10px 5px;
+  }
+}

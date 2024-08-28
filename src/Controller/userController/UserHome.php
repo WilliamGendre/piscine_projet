@@ -14,7 +14,6 @@ class UserHome extends AbstractController{
     public function userHome(IllustrationRepository $illustrationsRepository){
         $currentUser = $this->getUser();
         $illustrations = [];
-        //dd($illustrationsRepository->findAll());
         foreach ($illustrationsRepository->findAll() as $illustration){
             if($illustration->getUser() === $currentUser){
                 $illustrations[] = $illustration;

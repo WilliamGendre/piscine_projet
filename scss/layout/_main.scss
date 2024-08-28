@@ -2,7 +2,7 @@ main{
   margin: 2% 10%;
 }
 
-/*----------  Home  ----------*/
+/*--------------------------------------------------  Home  --------------------------------------------------*/
 
 #home h2{
   background-color: $black;
@@ -21,7 +21,7 @@ main{
   @include flex(center, column, center);
 }
 
-/* Main page user */
+/*--------------------------------------------------  User  --------------------------------------------------*/
 
 #pageUser div, #navUser ul{
   @include flex(space-between, row, center, 5px);
@@ -45,11 +45,11 @@ main{
   color: $white;
 }
 
-#navUser ul li p{
+#navUser ul li p, .userIllustration h3{
   text-align: center;
   border: solid 3px $black;
   width: 120px;
-  padding: 5% 0;
+  padding: 5px 0;
   border-radius: 10px;
 }
 
@@ -104,4 +104,45 @@ main{
 
 table{
   text-align: center;
+}
+
+/*--------------------------------------------------  Connexion  --------------------------------------------------*/
+
+.formMain{
+  margin-bottom: 3%;
+}
+
+.formMain button{
+  margin-top: 1%;
+}
+
+/*--------------------------------------------------  Illustration  --------------------------------------------------*/
+
+.userIllustration h3{
+  margin: 15px 0;
+}
+
+#contentIllustration{
+  border: solid 3px $black;
+  padding: 5px 0;
+  border-radius: 10px;
+}
+
+#updateDelete p:first-of-type, #updateDelete p:nth-of-type(2){
+  text-align: center;
+  border: solid 3px $black;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#updateDelete p:first-of-type{
+  background-color: $blue;
+}
+
+#updateDelete p:nth-of-type(2){
+  background-color: $red;
+}
+
+#updateDelete p:nth-of-type(2):hover, #updateDelete p a:hover{
+  color: $white;
 }

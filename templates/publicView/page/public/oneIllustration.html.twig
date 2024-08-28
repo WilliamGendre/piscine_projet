@@ -5,9 +5,10 @@
 {% block content %}
 
     <main>
-        <section>
+        <section class="userIllustration">
             <div><img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}"></div>
             <h3>{{ illustration.name }}</h3>
+            <p id="contentIllustration">{{ illustration.description }}</p>
         </section>
     </main>
 
