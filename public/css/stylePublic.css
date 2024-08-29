@@ -291,6 +291,7 @@ table {
 /*--------------------------------------------------  Connexion  --------------------------------------------------*/
 .formMain {
   margin-bottom: 3%;
+  height: 60vh;
 }
 
 .formMain button {
@@ -438,6 +439,15 @@ footer nav ul {
     flex-wrap: wrap;
     gap: 10%;
   }
+  #connexionInscription {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10%;
+    width: 100%;
+  }
   #backgroundImage {
     height: 20vh;
   }
@@ -465,6 +475,20 @@ footer nav ul {
     align-items: center;
     flex-wrap: wrap;
     gap: 2%;
+    background-color: black;
+    padding: 2% 0;
+    border-radius: 10px;
+  }
+  #menuFooter ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10%;
+  }
+  #menuFooter ul li {
+    margin: 4% 0;
   }
 }
 
