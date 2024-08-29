@@ -147,6 +147,8 @@ class UserIllustrationController extends AbstractController
         $entityManager->remove($illustration);
         $entityManager->flush();
 
-        return $this->redirectToRoute('user_home');
+        $this->addFlash('success', 'L\'illustration à bien été supprimer');
+
+        return $this->redirectToRoute('user_home', ['user' => $currentUser]);
     }
 }

@@ -6,7 +6,7 @@
 
     <main id="home">
         <section>
-            <h2>Dernière mise en ligne</h2>
+            <h2><a href="{{ path('illustration_all') }}">Dernière mise en ligne</a></h2>
             <article class="illustrationHome">
                 {% for illustration in illustrations %}
                     <div class="thumbnail">
@@ -14,10 +14,10 @@
                     </div>
                 {% endfor %}
             </article>
-            <h2>Les plus visités de la semaines</h2>
+            <h2><a href="">Les plus visités de la semaines</a></h2>
             <article class="illustrationHome">
             </article>
-            <h2>Les plus visités</h2>
+            <h2><a href="">Les plus visités</a></h2>
             <article class="illustrationHome">
             </article>
         </section>

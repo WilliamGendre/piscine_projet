@@ -1,0 +1,18 @@
+{% extends 'publicView/base.html.twig' %}
+
+{% block title %}Illustrations{% endblock %}
+
+{% block content %}
+
+    <main>
+        <h2 id="titreAllIllustration">Illustrations</h2>
+        <section id="allIllustration">
+            {% for illustration in illustrations %}
+                <div class="thumbnail">
+                    <a href="{{ path('public_illustration', {'id': illustration.id}) }}"><img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}"></a>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+
+{% endblock %}

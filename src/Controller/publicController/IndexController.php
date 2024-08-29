@@ -13,14 +13,8 @@ class IndexController extends AbstractController{
     #[Route('/', name: 'index')]
     public function homePage(IllustrationRepository $illustrationRepository){
 
-        $currentUser = $this->getUser();
-
         $illustrations = $illustrationRepository->findByIllustrationHome();
 
-        // regarde si un user est connecter
-        if (null !== $currentUser && $this->isGranted('ROLE_USER')) {
-            return $this->render('user/indexUser.html.twig', ['illustrations' => $illustrations]);
-        }
         return $this->render('publicView/index.html.twig', ['illustrations' => $illustrations]);
     }
 

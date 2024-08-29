@@ -146,9 +146,16 @@ main {
 }
 
 /*--------------------------------------------------  Home  --------------------------------------------------*/
-#home h2 {
+#home h2, #titreAllIllustration {
   background-color: black;
+}
+
+#home h2 a, #titreAllIllustration {
   color: white;
+}
+
+#home h2 a:hover {
+  color: red;
 }
 
 .illustrationHome {
@@ -314,6 +321,16 @@ table {
 
 #updateDelete p:nth-of-type(2):hover, #updateDelete p a:hover {
   color: white;
+}
+
+/*--------------------------------------------------  All Illustration  --------------------------------------------------*/
+#allIllustration {
+  display: flex;
+  justify-content: none;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
 }
 
 footer {
