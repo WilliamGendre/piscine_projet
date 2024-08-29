@@ -9,8 +9,33 @@
     width: 40px;
   }
 
+  .menuBurger{
+    display: block;
+    text-align: center;
+  }
+
+  #navMenu{
+    display: none;
+  }
+
+  #navMenu.active{
+    display: block;
+    background-color: $black;
+    margin: 0 30% 2%;
+    padding: 2% 0;
+    border-radius: 10px;
+  }
+
   #navMenu ul li{
-    padding: 2% 2%;
+    margin: 2% 0;
+  }
+
+  #navMenu ul li a{
+    background-color: rgba(0,0,0,1);
+  }
+
+  #navMenu ul{
+    @include flex(center, column, center,10%);
   }
 
   #backgroundImage{
@@ -27,7 +52,7 @@
     width: 48%;
   }
 
-  .thumbnail:last-of-type{
+  .thumbnailHome:last-of-type{
     display: none;
   }
 
@@ -35,5 +60,13 @@
 
   .navFooter{
     padding: 10px 5px;
+  }
+
+  #menuFooter{
+    display: none;
+  }
+
+  #menuFooter.active{
+    @include flex(center, column, center);
   }
 }

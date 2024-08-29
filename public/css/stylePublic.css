@@ -91,6 +91,10 @@ i {
   border-radius: 10px;
 }
 
+.menuBurger {
+  display: none;
+}
+
 #navMenu ul li a:hover {
   color: red;
 }
@@ -356,10 +360,9 @@ footer nav ul {
   color: red;
 }
 
-footer i:hover {
-  color: white;
-}
-
+/*footer i:hover{
+  color: $white;
+}*/
 .userIllustration {
   position: relative;
 }
@@ -407,8 +410,33 @@ footer i:hover {
   .logo {
     width: 40px;
   }
+  .menuBurger {
+    display: block;
+    text-align: center;
+  }
+  #navMenu {
+    display: none;
+  }
+  #navMenu.active {
+    display: block;
+    background-color: black;
+    margin: 0 30% 2%;
+    padding: 2% 0;
+    border-radius: 10px;
+  }
   #navMenu ul li {
-    padding: 2% 2%;
+    margin: 2% 0;
+  }
+  #navMenu ul li a {
+    background-color: rgb(0, 0, 0);
+  }
+  #navMenu ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10%;
   }
   #backgroundImage {
     height: 20vh;
@@ -420,12 +448,23 @@ footer i:hover {
   .thumbnail {
     width: 48%;
   }
-  .thumbnail:last-of-type {
+  .thumbnailHome:last-of-type {
     display: none;
   }
   /*------------------------------ Footer ------------------------------*/
   .navFooter {
     padding: 10px 5px;
+  }
+  #menuFooter {
+    display: none;
+  }
+  #menuFooter.active {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2%;
   }
 }
 

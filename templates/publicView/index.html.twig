@@ -9,7 +9,7 @@
             <h2><a href="{{ path('illustration_all') }}">Dernière mise en ligne</a></h2>
             <article class="illustrationHome">
                 {% for illustration in illustrations %}
-                    <div class="thumbnail">
+                    <div class="thumbnail thumbnailHome">
                         <a href="{{ path('public_illustration', {'id': illustration.id}) }}"><img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}"></a>
                     </div>
                 {% endfor %}

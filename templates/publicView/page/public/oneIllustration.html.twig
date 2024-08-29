@@ -8,6 +8,11 @@
         <section class="userIllustration">
             <div><img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}"></div>
             <h3>{{ illustration.name }}</h3>
+            {% if illustration.user.pseudo %}
+                <h3>{{ illustration.user.pseudo }}</h3>
+            {% else %}
+                <h3>{{ illustration.user.firstname }}</h3>
+            {% endif %}
             <p id="contentIllustration">{{ illustration.description }}</p>
         </section>
     </main>

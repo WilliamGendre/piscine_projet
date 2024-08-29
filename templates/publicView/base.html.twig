@@ -22,27 +22,30 @@
                     </ul>
                 </nav>
             </section>
-            <nav id="navMenu">
-                <ul>
-                    <li><a href="{{ path('index') }}">Accueil</a></li>
-                    <li><a href="">Catégorie</a></li>
-                    {% if app.user %}
-                        <li><a href="{{ path('user_home')}}">Profil</a></li>
-                    {% endif %}
-                    <li>
-                        <ul>
-                            {% if app.user %}
-                                <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
-                            {% else %}
-                                <div id="connexionInscription">
-                                    <li><a href="{{ path('app_login') }}">Connexion</a></li>
-                                    <li><a href="{{ path('user_insert') }}">Inscription</a></li>
-                                </div>
-                            {% endif %}
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+            <!--<section>-->
+                <div id="menuBurgerHeader" class="menuBurger"><i class="fa-solid fa-bars"></i></div>
+                <nav id="navMenu">
+                    <ul>
+                        <li><a href="{{ path('index') }}">Accueil</a></li>
+                        <li><a href="">Catégorie</a></li>
+                        {% if app.user %}
+                            <li><a href="{{ path('user_home')}}">Profil</a></li>
+                        {% endif %}
+                        <li>
+                            <ul>
+                                {% if app.user %}
+                                    <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
+                                {% else %}
+                                    <div id="connexionInscription">
+                                        <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                                        <li><a href="{{ path('user_insert') }}">Inscription</a></li>
+                                    </div>
+                                {% endif %}
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            <!--</section>-->
             <!-- Rajouté action="{# {{ path('') }} #}" -->
             <form method="post" id="formHeader">
                 <input type="search">
@@ -66,10 +69,15 @@
         <nav>
             <ul>
                 <li><div class="logo"><img src="{{ asset('images/logo.jpg') }}" alt="logo"></div></li>
-                <li><a href="" class="navFooter">Condition générales</a></li>
-                <li><a href="" class="navFooter">Nous contacter</a></li>
-                <li>
+                <li id="menuBurgerFooter" class="menuBurger"><i class="fa-solid fa-bars"></i></li>
+                <li id="menuFooter">
                     <ul>
+                        <li><a href="" class="navFooter">Condition générales</a></li>
+                        <li><a href="" class="navFooter">Nous contacter</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="navReseauxSociaux">
                         <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
                         <li><a href=""><i class="fa-brands fa-square-x-twitter"></i></a></li>
                     </ul>

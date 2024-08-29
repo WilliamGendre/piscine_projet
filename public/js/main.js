@@ -12,3 +12,17 @@ deleteButtons.forEach((deleteButton => {
         })
     }
 ))
+
+let burgerHeader = document.querySelector('#menuBurgerHeader');
+let menuHeader = document.querySelector('#navMenu');
+
+burgerHeader.addEventListener('click', ()=>{
+    menuHeader.classList.toggle('active');
+})
+
+let burgerFooter = document.querySelector('#menuBurgerFooter');
+let menuFooter = document.querySelector('#menuFooter');
+
+burgerFooter.addEventListener('click', ()=>{
+    menuFooter.classList.toggle('active');
+})

@@ -52,6 +52,10 @@ i{
   border-radius: 10px;
 }
 
+.menuBurger{
+  display: none;
+}
+
 #navMenu ul li a:hover{
   color: $red;
 }
