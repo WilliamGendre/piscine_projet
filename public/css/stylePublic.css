@@ -328,6 +328,15 @@ table {
   color: white;
 }
 
+#h3OneIllustration {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
 /*--------------------------------------------------  All Illustration  --------------------------------------------------*/
 #allIllustration {
   display: flex;
@@ -427,6 +436,7 @@ footer nav ul {
   }
   #navMenu ul li {
     margin: 2% 0;
+    padding: 2% 0;
   }
   #navMenu ul li a {
     background-color: rgb(0, 0, 0);
@@ -454,6 +464,9 @@ footer nav ul {
   #navMenu ul li:last-of-type {
     margin-top: 10px;
   }
+  ul {
+    padding-left: 0;
+  }
   /*------------------------------ Main Home ------------------------------*/
   .thumbnail {
     width: 48%;
@@ -474,6 +487,14 @@ footer nav ul {
   #reseauxUser li:first-of-type a {
     padding: 5%;
     margin-left: 68px;
+  }
+  .userIllustration div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 2%;
   }
   /*------------------------------ Footer ------------------------------*/
   .navFooter {

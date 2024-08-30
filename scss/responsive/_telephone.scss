@@ -28,6 +28,7 @@
 
   #navMenu ul li{
     margin: 2% 0;
+    padding: 2% 0;
   }
 
   #navMenu ul li a{
@@ -49,6 +50,10 @@
 
   #navMenu ul li:last-of-type{
     margin-top: 10px;
+  }
+
+  ul{
+    padding-left: 0;
   }
 
   /*------------------------------ Main Home ------------------------------*/
@@ -78,6 +83,10 @@
   #reseauxUser li:first-of-type a{
     padding: 5%;
     margin-left: 68px;
+  }
+
+  .userIllustration div:nth-of-type(2){
+    @include flex(space-between, column-reverse, start);
   }
 
   /*------------------------------ Footer ------------------------------*/
