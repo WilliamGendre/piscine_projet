@@ -19,6 +19,11 @@ class UserIllustrationController extends AbstractController
     #[Route('/illustrationHome/{id}', name: 'public_illustration')]
     public function oneIllustration(int $id, IllustrationRepository $illustrationRepository){
         $illustration = $illustrationRepository->find($id);
+
+        if (!$illustration) {
+            return $this->render('publicView/error404.html.twig');
+        }
+
         return $this->render('publicView/page/public/oneIllustration.html.twig', ['illustration' => $illustration]);
     }
 
@@ -26,6 +31,11 @@ class UserIllustrationController extends AbstractController
     public function oneIllustrationByUser(int $id, IllustrationRepository $illustrationRepository){
         $currentUser = $this->getUser();
         $illustration = $illustrationRepository->find($id);
+
+        if (!$illustration) {
+            return $this->render('publicView/error404.html.twig');
+        }
+
         return $this->render('user/page/oneIllustrationByUser.html.twig', ['illustration' => $illustration, 'user' => $currentUser]);
     }
 
@@ -83,6 +93,10 @@ class UserIllustrationController extends AbstractController
 
         $illustration = $illustrationRepository->find($id);
 
+        if (!$illustration) {
+            return $this->render('publicView/error404.html.twig');
+        }
+
         $existIllustration  = $illustration->getIllustration();
 
         if ($illustration->getUser() !== $currentUser){
@@ -139,6 +153,10 @@ class UserIllustrationController extends AbstractController
         $currentUser = $this->getUser();
 
         $illustration = $illustrationRepository->find($id);
+
+        if (!$illustration) {
+            return $this->render('publicView/error404.html.twig');
+        }
 
         if ($illustration->getUser() !== $currentUser){
             return $this->render('user/page/accesInterdit.html.twig');

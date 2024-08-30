@@ -39,6 +39,14 @@
                     {# {% endif %}  #}
                 {% endfor %}
             </article>
+
+            <article id="updateDeleteUser">
+                <p><a href="{{ path('update_user') }}">Modifier profil</a></p>
+                <p data-id="" class="falseDelete">Supprimer profil</p>
+                <p class="trueDelete" id="deleteIllustration">êtes-vous sûr de vouloir supprimer l'article?<br><br><a href="{{ path('delete_user') }}">Oui</a>
+                    <a href="{{ path('user_home') }}">Non</a></p>
+            </article>
+
         </section>
     </main>
 

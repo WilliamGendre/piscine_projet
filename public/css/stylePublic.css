@@ -149,6 +149,33 @@ main {
   margin: 2% 10%;
 }
 
+#error404 {
+  height: 100vh;
+  background-image: url("../images/erreur404.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+/*--------------------------------------------------  Admin  --------------------------------------------------*/
+#listeCategory {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+#insertCategory, #updateCategory {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
 /*--------------------------------------------------  Home  --------------------------------------------------*/
 #home h2, #titreAllIllustration {
   background-color: black;
@@ -185,6 +212,10 @@ main {
 }
 
 /*--------------------------------------------------  User  --------------------------------------------------*/
+#pageUser {
+  position: relative;
+}
+
 #pageUser div, #navUser ul {
   display: flex;
   justify-content: space-between;
@@ -212,7 +243,7 @@ main {
   color: white;
 }
 
-#navUser ul li p, .userIllustration h3 {
+#navUser ul li p, .userIllustration h3, #listeCategory p {
   text-align: center;
   border: solid 3px black;
   width: 120px;
@@ -247,6 +278,16 @@ main {
 #reseauxUser li:first-of-type a:hover {
   background-color: black;
   color: white;
+}
+
+#updateDeleteUser {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+  margin: 2% 0;
 }
 
 .thumbnail {
@@ -309,18 +350,18 @@ table {
   border-radius: 10px;
 }
 
-#updateDelete p:first-of-type, #updateDelete p:nth-of-type(2) {
+#updateDelete p:first-of-type, #updateDelete p:nth-of-type(2), #updateDeleteUser p {
   text-align: center;
   border: solid 3px black;
   padding: 5px 10px;
   border-radius: 10px;
 }
 
-#updateDelete p:first-of-type {
+#updateDelete p:first-of-type, #updateDeleteUser p:first-of-type {
   background-color: #3993DD;
 }
 
-#updateDelete p:nth-of-type(2) {
+#updateDelete p:nth-of-type(2), #updateDeleteUser p:nth-of-type(2) {
   background-color: red;
 }
 

@@ -1,0 +1,38 @@
+{% extends 'publicView/base.html.twig' %}
+
+{% block title %}Modification profil{% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <section class="formulaireInsertUser">
+
+            <h2>Modifier utilisateur</h2>
+
+            <form method="post" id="insertUser" class="formMain">
+
+                <label for="">
+                    <p>Nom</p>
+                    <input type="text" name="name" value="{{ user.name }}">
+                </label>
+
+                <label for="">
+                    <p>Prénom</p>
+                    <input type="text" name="firstname" value="{{ user.firstname }}">
+                </label>
+
+                <label for="">
+                    <p>Pseudo</p>
+                    <input type="text" name="pseudo" value="{{ user.pseudo }}">
+                </label>
+
+                <input type="submit" name="valider" id="formSubmit">
+
+            </form>
+
+        </section>
+
+    </main>
+
+{% endblock %}

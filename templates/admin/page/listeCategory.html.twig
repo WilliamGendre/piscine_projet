@@ -5,9 +5,11 @@
 {% block content %}
 
     <main>
-        <section class="userIllustration">
-            <h2>Liste des catégories</h2>
-            <p><a href="{{ path('admin_insert_category') }}">Nouvelle Catégorie</a></p>
+        <section>
+            <div id="listeCategory">
+                <h2>Liste des catégories</h2>
+                <p><a href="{{ path('admin_insert_category') }}">Nouvelle Catégorie</a></p>
+            </div>
             <table width="100%" border="1">
                 <thead>
                     <th><h3>Nom catégorie</h3></th>

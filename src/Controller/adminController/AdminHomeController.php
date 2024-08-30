@@ -14,7 +14,6 @@ class AdminHomeController extends AbstractController{
     public function indexAdmin(UserRepository $userRepository){
 
         $users = [];
-        //dd($illustrationsRepository->findAll());
         foreach ($userRepository->findAll() as $user){
             if(!in_array("ROLE_ADMIN", $user->getRoles(), true)){
                 $users[] = $user;

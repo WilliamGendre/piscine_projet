@@ -21,6 +21,11 @@ class IndexController extends AbstractController{
     #[Route('/illustration/{id}', name: 'home_illustration')]
     public function oneIllustrationHome(int $id, IllustrationRepository $illustrationRepository){
         $illustration = $illustrationRepository->find($id);
+
+        if (!$illustration) {
+            return $this->render('publicView/error404.html.twig');
+        }
+
         return $this->render('user/page/oneIllustration.html.twig', ['illustration' => $illustration]);
     }
 

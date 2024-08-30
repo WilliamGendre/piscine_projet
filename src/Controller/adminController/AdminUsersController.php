@@ -16,6 +16,10 @@ class AdminUsersController extends AbstractController
     public function deleteUser(int $id, UserRepository $userRepository, EntityManagerInterface $entityManager){
         $user = $userRepository->find($id);
 
+        if (!$user) {
+            return $this->render('publicView/error404.html.twig');
+        }
+
         $entityManager->remove($user);
         $entityManager->flush();
 

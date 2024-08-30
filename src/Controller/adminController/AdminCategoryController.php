@@ -46,6 +46,10 @@ class AdminCategoryController extends AbstractController{
     public function updateCategory(int $id, CategoryRepository $categoryRepository, Request $request, EntityManagerInterface $entityManager){
         $category = $categoryRepository->find($id);
 
+        if (!$category) {
+            return $this->render('publicView/error404.html.twig');
+        }
+
         if($request->getMethod() === 'POST'){
             $libelle = $request->request->get('libelle');
 
@@ -65,6 +69,10 @@ class AdminCategoryController extends AbstractController{
     #[Route('/admin/deleteCategory/{id}', name: 'admin_delete_category')]
     public function deleteCategory(int $id, CategoryRepository $categoryRepository, EntityManagerInterface $entityManager){
         $category = $categoryRepository->find($id);
+
+        if (!$category) {
+            return $this->render('publicView/error404.html.twig');
+        }
 
         $entityManager->remove($category);
         $entityManager->flush();
