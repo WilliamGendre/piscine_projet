@@ -18,6 +18,19 @@
                     </div>
                 {% endif %}
             </div>
+
+            <div class="illustrationCategory">
+                {% if illustration.category is not empty %}
+                    <p>Catégorie: </p>
+                    {% for category in illustration.category%}
+                        <p>{{ category.libelle }}</p>
+                        <p> / </p>
+                    {% endfor %}
+                {% else %}
+                    <p id="noCategory">Catégorie: Sans catégorie</p>
+                {% endif %}
+            </div>
+
             <p id="contentIllustration">{{ illustration.description }}</p>
         </section>
     </main>

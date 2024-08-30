@@ -38,12 +38,14 @@ class IllustrationType extends AbstractType
                 'class' => User::class,
                 'choice_label' => 'id',
             ])
+            */
             ->add('category', EntityType::class, [
                 'class' => Category::class,
-                'choice_label' => 'id',
+                'choice_label' => 'libelle',
                 'multiple' => true,
+                'expanded' => true,
             ])
-        */
+
             ->add('valider', SubmitType::class)
         ;
     }
