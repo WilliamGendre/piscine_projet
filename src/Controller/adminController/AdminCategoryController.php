@@ -47,7 +47,7 @@ class AdminCategoryController extends AbstractController{
         $category = $categoryRepository->find($id);
 
         if (!$category) {
-            return $this->render('publicView/error404.html.twig');
+            return $this->render('admin/error404Admin.html.twig');
         }
 
         if($request->getMethod() === 'POST'){
@@ -71,7 +71,7 @@ class AdminCategoryController extends AbstractController{
         $category = $categoryRepository->find($id);
 
         if (!$category) {
-            return $this->render('publicView/error404.html.twig');
+            return $this->render('admin/error404Admin.html.twig');
         }
 
         $entityManager->remove($category);

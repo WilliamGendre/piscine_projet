@@ -17,7 +17,7 @@ class AdminUsersController extends AbstractController
         $user = $userRepository->find($id);
 
         if (!$user) {
-            return $this->render('publicView/error404.html.twig');
+            return $this->render('admin/error404Admin.html.twig');
         }
 
         $entityManager->remove($user);
