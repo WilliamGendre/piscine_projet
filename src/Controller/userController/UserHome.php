@@ -7,6 +7,7 @@ namespace App\Controller\userController;
 use App\Repository\IllustrationRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
 
@@ -61,11 +62,13 @@ class UserHome extends AbstractController{
     }
 
     #[Route('/user/deleteUser', name:'delete_user')]
-    public function userDelete(EntityManagerInterface $entityManager){
+    public function userDelete(EntityManagerInterface $entityManager, Security $security){
         $currentUser = $this->getUser();
 
         $entityManager->remove($currentUser);
         $entityManager->flush();
+
+        $security -> logout(false);
 
         $this->addFlash('success', 'Le profil à bien été supprimé');
 

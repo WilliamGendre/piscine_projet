@@ -105,7 +105,7 @@ class UserIllustrationController extends AbstractController
         $existIllustration  = $illustration->getIllustration();
 
         if ($illustration->getUser() !== $currentUser){
-            return $this->render('user/page/accesInterdit.html.twig');
+            return $this->render('user/page/accessProhibited.html.twig');
         }
 
         $illustrationUpdateForm = $this->createForm(IllustrationType::class, $illustration);
@@ -164,7 +164,7 @@ class UserIllustrationController extends AbstractController
         }
 
         if ($illustration->getUser() !== $currentUser){
-            return $this->render('user/page/accesInterdit.html.twig');
+            return $this->render('user/page/accessProhibited.html.twig');
         }
 
         $entityManager->remove($illustration);
