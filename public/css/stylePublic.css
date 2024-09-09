@@ -476,6 +476,15 @@ footer nav ul {
 }
 
 @media screen and (max-width: 480px) {
+  body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: none;
+    flex-wrap: wrap;
+    gap: 0;
+    min-height: 100vh;
+  }
   /*------------------------------ Header ------------------------------*/
   h1 {
     font-size: 30px;

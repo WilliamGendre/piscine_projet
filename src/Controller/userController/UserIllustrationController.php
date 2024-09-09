@@ -41,13 +41,16 @@ class UserIllustrationController extends AbstractController
 
     // Ajout d'une nouvelle illustration par l'utilsateur
     #[Route('/user/insert/illustration', name: 'user_insert_illustration')]
-    public function insertIllustration(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger, ParameterBagInterface $params){
+    public function insertIllustration(Request $request, EntityManagerInterface $entityManager,
+                                       SluggerInterface $slugger, ParameterBagInterface $params){
 
             $illustration = new Illustration();
 
             $illustrationCreatForm = $this->createForm(IllustrationType::class, $illustration);
             $thumbnailCreatForm = $this->createForm(IllustrationType::class, $illustration);
 
+            // handleRequest prend en charge la soumission du formulaire,
+            // de l'hydratation de l'objet (illustration dans se cas) et de la validation
             $illustrationCreatForm->handleRequest($request);
             $thumbnailCreatForm->handleRequest($request);
 
@@ -65,6 +68,7 @@ class UserIllustrationController extends AbstractController
                     $safeThumbnailFileName = $slugger->slug($originalThumbnailFileName);
                     $newThumbnailFileName = $safeThumbnailFileName . '-' . uniqid() . '.' . $thumbnail->guessExtension();
 
+                    // prépare la route
                     $rootPath = $params->get("kernel.project_dir");
                     $illustrationFile->move($rootPath . '/public/uploadIllustration', $newFileName);
 
@@ -82,7 +86,8 @@ class UserIllustrationController extends AbstractController
                 }
             }
 
-        return $this->render('user/page/insertIllustration.html.twig', ['illustrationForm' => $illustrationCreatForm->createView()]);
+        return $this->render('user/page/insertIllustration.html.twig',
+            ['illustrationForm' => $illustrationCreatForm->createView()]);
     }
 
     // Modification d'une illustration par son utilisateur

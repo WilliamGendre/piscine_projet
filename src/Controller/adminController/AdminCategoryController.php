@@ -16,7 +16,8 @@ class AdminCategoryController extends AbstractController{
 
     #[Route('admin/category', name: 'admin_category')]
     public function adminCategory(CategoryRepository $categoryRepository){
-        return $this->render('admin/page/listeCategory.html.twig', ['categorys' => $categoryRepository->findAll()]);
+        return $this->render('admin/page/listeCategory.html.twig',
+            ['categorys' => $categoryRepository->findAll()]);
     }
 
     #[Route('/admin/insertCategory', name: 'admin_insert_category')]
@@ -43,7 +44,8 @@ class AdminCategoryController extends AbstractController{
     }
 
     #[Route('/admin/updateCategory/{id}', name: 'admin_update_category')]
-    public function updateCategory(int $id, CategoryRepository $categoryRepository, Request $request, EntityManagerInterface $entityManager){
+    public function updateCategory(int $id, CategoryRepository $categoryRepository, Request $request,
+                                   EntityManagerInterface $entityManager){
         $category = $categoryRepository->find($id);
 
         if (!$category) {
@@ -67,7 +69,8 @@ class AdminCategoryController extends AbstractController{
     }
 
     #[Route('/admin/deleteCategory/{id}', name: 'admin_delete_category')]
-    public function deleteCategory(int $id, CategoryRepository $categoryRepository, EntityManagerInterface $entityManager){
+    public function deleteCategory(int $id, CategoryRepository $categoryRepository,
+                                   EntityManagerInterface $entityManager){
         $category = $categoryRepository->find($id);
 
         if (!$category) {
