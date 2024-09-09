@@ -12,12 +12,25 @@ main{
 
 /*--------------------------------------------------  Admin  --------------------------------------------------*/
 
+.sectionAdmin{
+  position: relative;
+}
+
+.sectionAdmin .trueDelete{
+  border: solid 1px $black;
+}
+
 #listeCategory{
   @include flex(space-between);
 }
 
 #insertCategory, #updateCategory{
   @include flex(center, column);
+}
+
+#adminIllustrationAll{
+  padding: 2%;
+  text-align: center;
 }
 
 /*--------------------------------------------------  Home  --------------------------------------------------*/

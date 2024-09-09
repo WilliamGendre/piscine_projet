@@ -1,0 +1,46 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Liste catégories{% endblock %}
+
+{% block content %}
+
+    <main>
+        <section class="sectionAdmin">
+                <h2 id="adminIllustrationAll">Liste des illustrations</h2>
+            <table width="100%" border="1">
+                <thead>
+                    <tr>
+                        <th><h3>Illustration</h3></th>
+                        <th><h3>Nom illustration</h3></th>
+                        <th><h3>Description</h3></th>
+                        <th><h3>Créateur</h3></th>
+                        <th><h3>Supprimer illustration</h3></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for illustration in illustrations %}
+                    <tr>
+                        <td><img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}"></td>
+                        <td>{{ illustration.name }}</td>
+                        <td>{{ illustration.description }}</td>
+                        <td>
+                            {% if illustration.user.pseudo %}
+                                <h3>{{ illustration.user.pseudo }}</h3>
+                            {% else %}
+                                <h3>{{ illustration.user.firstname }}</h3>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <p data-id="{{ illustration.id }}" class="falseDelete">Supprimer</p>
+                            <p class="trueDelete" id="deleteIllustration{{ illustration.id }}">êtes-vous sûr de vouloir supprimer l'illustration?<br><br>
+                                <a href="{{ path('admin_deleteIllustration', {'id': illustration.id}) }}">Oui</a><a href="{{ path('admin_illustrations') }}">Non</a></p>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+{% endblock %}
