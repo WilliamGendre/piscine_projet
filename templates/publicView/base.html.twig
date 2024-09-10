@@ -28,7 +28,7 @@
                 <nav id="navMenu">
                     <ul>
                         <li><a href="{{ path('index') }}">Accueil</a></li>
-                        <li><a href="">Catégorie</a></li>
+                        <li><a href="{{ path('category_all') }}">Catégorie</a></li>
                         {% if app.user %}
                             <li><a href="{{ path('user_home')}}">Profil</a></li>
                         {% endif %}

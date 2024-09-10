@@ -230,3 +230,33 @@ table{
 #allIllustration{
   @include flex(none);
 }
+
+/*--------------------------------------------------  All Category  --------------------------------------------------*/
+
+#categoryTitre{
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+#categoryList{
+  @include flex();
+
+  h3{
+    background-color: $black;
+    padding: 1.5%;
+    width: 175px;
+    text-align: center;
+    border-radius: 10px;
+    text-transform: capitalize;
+
+    a{
+      font-size: 22px;
+      color: $white;
+    }
+
+    a:hover{
+      color: $red;
+    }
+  }
+}

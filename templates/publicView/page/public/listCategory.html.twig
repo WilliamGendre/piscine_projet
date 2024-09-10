@@ -1,0 +1,16 @@
+{% extends 'publicView/base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block content %}
+
+    <main>
+        <h2 id="categoryTitre">Catégories</h2>
+        <section id="categoryList">
+            {% for category in categorys %}
+                <h3><a href="">{{ category.libelle }}</a></h3>
+            {% endfor %}
+        </section>
+    </main>
+
+{% endblock %}

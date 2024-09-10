@@ -432,6 +432,37 @@ table {
   gap: 2%;
 }
 
+/*--------------------------------------------------  All Category  --------------------------------------------------*/
+#categoryTitre {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+#categoryList {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+#categoryList h3 {
+  background-color: black;
+  padding: 1.5%;
+  width: 175px;
+  text-align: center;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+#categoryList h3 a {
+  font-size: 22px;
+  color: white;
+}
+#categoryList h3 a:hover {
+  color: red;
+}
+
 footer {
   background-color: #3993DD;
   padding: 2%;
