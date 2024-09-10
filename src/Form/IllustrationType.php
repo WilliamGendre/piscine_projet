@@ -8,6 +8,7 @@ use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -22,8 +23,11 @@ class IllustrationType extends AbstractType
                 'required' => false])
             ->add('thumbnail', FileType::class,[
                 'mapped' => false,
-                'required' => false])
-            ->add('name')
+                'required' => false,
+                'label' => 'Echantillon',])
+            ->add('name', TextType::class,[
+                'label' => 'Nom',
+            ])
             ->add('description')
             /*->add('limitAge')
             ->add('price')
@@ -44,6 +48,7 @@ class IllustrationType extends AbstractType
                 'choice_label' => 'libelle',
                 'multiple' => true,
                 'expanded' => true,
+                'label' => 'Catégories',
             ])
 
             ->add('valider', SubmitType::class)
