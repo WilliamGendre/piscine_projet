@@ -13,7 +13,7 @@ class IllustrationsController extends AbstractController{
     #[Route('/illustrations/all', name: 'illustration_all')]
     public function illustrationAll(IllustrationRepository $illustrationRepository){
 
-        $illustrations = $illustrationRepository->findall();
+        $illustrations = $illustrationRepository->findAllDesc();
 
         return $this->render('publicView/page/public/illustrations.html.twig', ['illustrations' => $illustrations]);
     }

@@ -29,6 +29,15 @@ class IllustrationRepository extends ServiceEntityRepository
            ;
        }
 
+    public function findAllDesc(): array
+    {
+        return $this->createQueryBuilder('i')
+            ->orderBy('i.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     //    public function findOneBySomeField($value): ?Illustrations
     //    {
     //        return $this->createQueryBuilder('i')
