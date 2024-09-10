@@ -1,0 +1,21 @@
+{% extends 'publicView/base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block content %}
+
+    <main>
+        <h2 id="oneCategoryTitle">{{ category.libelle }}</h2>
+        <section id="oneCategory">
+            {% for illustration in illustrations %}
+                <div class="thumbnail thumbnailHome">
+                    <a href="{{ path('public_illustration', {'id': illustration.id}) }}">
+                        <img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}"
+                             alt="{{ illustration.name }}">
+                    </a>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+
+{% endblock %}

@@ -56,7 +56,7 @@ main{
   color: $red;
 }
 
-.illustrationHome{
+.illustrationHome, #oneCategory{
   @include flex(none);
 }
 
@@ -233,7 +233,7 @@ table{
 
 /*--------------------------------------------------  All Category  --------------------------------------------------*/
 
-#categoryTitre{
+#categoryTitle,  #oneCategoryTitle{
   font-size: 50px;
   text-align: center;
   margin-bottom: 2%;
@@ -259,4 +259,9 @@ table{
       color: $red;
     }
   }
+
+  /*--------------------------------------------------  One Category  --------------------------------------------------*/
+
+
+
 }

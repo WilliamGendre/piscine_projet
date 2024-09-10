@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Category;
 use App\Entity\Illustration;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -36,6 +37,18 @@ class IllustrationRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
             ;
+    }
+
+    public function findByCategory(Category $category)
+    {
+        return $this->createQueryBuilder('i')
+            ->join('i.category', 'c')
+            ->where('c.id = :categoryid')
+            ->setParameter('categoryid', $category->getId())
+            ->getQuery()
+            ->getResult()
+            ;
+
     }
 
     //    public function findOneBySomeField($value): ?Illustrations

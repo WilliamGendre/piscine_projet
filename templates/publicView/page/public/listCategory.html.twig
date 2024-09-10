@@ -5,10 +5,10 @@
 {% block content %}
 
     <main>
-        <h2 id="categoryTitre">Catégories</h2>
+        <h2 id="categoryTitle">Catégories</h2>
         <section id="categoryList">
             {% for category in categorys %}
-                <h3><a href="">{{ category.libelle }}</a></h3>
+                <h3><a href="{{ path('one_category', {'id': category.id}) }}">{{ category.libelle }}</a></h3>
             {% endfor %}
         </section>
     </main>

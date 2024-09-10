@@ -68,8 +68,19 @@
     width: 48%;
   }
 
-  .thumbnailHome:last-of-type{
+  .illustrationHome .thumbnailHome:last-of-type{
     display: none;
+  }
+
+  #categoryList{
+    background-color: $black;
+    width: 200px;
+    margin: auto;
+    border-radius: 10px;
+
+    h3{
+      margin: 2% 0;
+    }
   }
 
   /*------------------------------ Main User ------------------------------*/
