@@ -16,10 +16,24 @@
             <section>
                 <div class="logo"><img src="{{ asset('images/logo.jpg') }}" alt="logo"></div>
                 <h1>MyDesign</h1>
+                <div id="usermenu">
+                    <i class="fa-regular fa-user" id="profil"></i>
+                    <nav id="userconnexion">
+                        <ul id="connexionInscription">
+                            {% if app.user %}
+                                <li><a href="{{ path('user_home')}}">Profil</a></li>
+                                <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
+                            {% else %}
+                                <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                                <li><a href="{{ path('user_insert') }}">Inscription</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
                 <nav class="navReseauxSociaux">
                     <ul>
-                        <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Dfr_FR"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="https://x.com/?lang=fr&mx=2"><i class="fa-brands fa-square-x-twitter"></i></a></li>
                     </ul>
                 </nav>
             </section>
@@ -29,29 +43,14 @@
                     <ul>
                         <li><a href="{{ path('index') }}">Accueil</a></li>
                         <li><a href="{{ path('category_all') }}">Catégorie</a></li>
-                        {% if app.user %}
-                            <li><a href="{{ path('user_home')}}">Profil</a></li>
-                        {% endif %}
-                        <li>
-                            <ul>
-                                {% if app.user %}
-                                    <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
-                                {% else %}
-                                    <div id="connexionInscription">
-                                        <li><a href="{{ path('app_login') }}">Connexion</a></li>
-                                        <li><a href="{{ path('user_insert') }}">Inscription</a></li>
-                                    </div>
-                                {% endif %}
-                            </ul>
-                        </li>
                     </ul>
                 </nav>
             <!--</section>-->
-            <!-- Rajouté action="{# {{ path('') }} #}" -->
+            <!-- Rajouté action="{# {{ path('') }} #}"
             <form method="post" id="formHeader">
                 <input type="search">
                 <input type="submit" value="Rechercher">
-            </form>
+            </form> -->
         </section>
         <div id="backgroundImage"></div>
         {% for message in app.flashes('success') %}
@@ -79,8 +78,8 @@
                 </li>
                 <li>
                     <ul class="navReseauxSociaux">
-                        <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Dfr_FR"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="https://x.com/?lang=fr&mx=2"><i class="fa-brands fa-square-x-twitter"></i></a></li>
                     </ul>
                 </li>
             </ul>
