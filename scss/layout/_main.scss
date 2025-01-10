@@ -68,6 +68,32 @@ main{
   @include flex(center, column, center);
 }
 
+.thumbnailHome{
+  @include flex(space-between, column, none);
+  height: 400px;
+  background-color: $black;
+  border-radius: 20px;
+  /*.DivImg{
+    height: 200px;
+  }*/
+  img{
+    border-radius: 20px;
+  }
+  h3, .illustrationCategory, a{
+    color: $white;
+    padding: 5%;
+  }
+  a:hover{
+    color: $black;
+  }
+}
+
+.OpenThumbnail{
+  background-color: $blue;
+  border-radius: 5px;
+  margin-left: 90px;
+}
+
 /*--------------------------------------------------  User  --------------------------------------------------*/
 
 #pageUser{
