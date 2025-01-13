@@ -27,16 +27,40 @@
                 </ul>
             </nav>
 
-            <h2 class="userHome">Toutes les créations</h2>
+            <h2>Toutes les créations</h2>
+            <div class="decorativeFeature"></div>
             <article id="userThumbnail">
                 {% for illustration in illustrations %}
-                    {# {% if illustration.user == user %}  #}
+                    <div class="thumbnail thumbnailHome">
+                        <div class="DivImg">
+                            <img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}"
+                                 alt="{{ illustration.name }}">
+                        </div>
+                        <div>
+                            <h3>{{ illustration.name }}</h3>
+                            <div class="illustrationCategory">
+                                {% if illustration.category is not empty %}
+                                    {% for category in illustration.category%}
+                                        <p>{{ category.libelle }}</p>
+                                        <p> / </p>
+                                    {% endfor %}
+                                {% else %}
+                                    <p>Sans catégorie</p>
+                                    <p>.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div>
+                            <a href="{{ path('user_illustration_one', {'id': illustration.id}) }}#userIllustration" class="OpenThumbnail">Voir illustration</a>
+                        </div>
+                    </div>
+                    {# {% if illustration.user == user %}
                         <div class="thumbnail">
                             <a href="{{ path('user_illustration_one', {'id': illustration.id}) }}">
                                 <img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}" alt="{{ illustration.name }}">
                             </a>
                         </div>
-                    {# {% endif %}  #}
+                    {% endif %}  #}
                 {% endfor %}
             </article>
 

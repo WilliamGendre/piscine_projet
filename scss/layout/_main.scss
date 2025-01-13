@@ -44,14 +44,6 @@ main{
 
 /*--------------------------------------------------  Home  --------------------------------------------------*/
 
-#titreAllIllustration{
-  background-color: $black;
-}
-
-#titreAllIllustration{
-  color: $white;
-}
-
 #home h2{
   margin-top: 5%;
 }
@@ -192,6 +184,7 @@ h2{
 
 .thumbnail{
   width: 18%;
+  margin-bottom: 2%;
 }
 
 #userThumbnail{

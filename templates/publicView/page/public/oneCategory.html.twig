@@ -4,15 +4,38 @@
 
 {% block content %}
 
-    <main>
-        <h2 id="oneCategoryTitle">{{ category.libelle }}</h2>
+    <main id="oneCategoryIllustrations">
+        <h2>{{ category.libelle }}</h2>
+        <div class="decorativeFeature"></div>
         <section id="oneCategory">
             {% for illustration in illustrations %}
                 <div class="thumbnail thumbnailHome">
-                    <a href="{{ path('public_illustration', {'id': illustration.id}) }}">
+                    <div class="DivImg">
                         <img src="{{ asset('uploadThumbnail/'~ illustration.thumbnail) }}"
                              alt="{{ illustration.name }}">
-                    </a>
+                    </div>
+                    <div>
+                        <h3>{{ illustration.name }}</h3>
+                        {% if illustration.user.pseudo %}
+                            <h3>{{ illustration.user.pseudo }}</h3>
+                        {% else %}
+                            <h3>{{ illustration.user.firstname }}</h3>
+                        {% endif %}
+                        <div class="illustrationCategory">
+                            {% if illustration.category is not empty %}
+                                {% for category in illustration.category%}
+                                    <p>{{ category.libelle }}</p>
+                                    <p> / </p>
+                                {% endfor %}
+                            {% else %}
+                                <p>Sans catégorie</p>
+                                <p>.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div>
+                        <a href="{{ path('public_illustration', {'id': illustration.id}) }}#oneIllustration" class="OpenThumbnail">Voir illustration</a>
+                    </div>
                 </div>
             {% endfor %}
         </section>

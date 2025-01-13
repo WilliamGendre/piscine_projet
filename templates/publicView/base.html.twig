@@ -21,7 +21,7 @@
                     <nav id="userconnexion">
                         <ul id="connexionInscription">
                             {% if app.user %}
-                                <li><a href="{{ path('user_home')}}">Profil</a></li>
+                                <li><a href="{{ path('user_home')}}#pageUser">Profil</a></li>
                                 <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
                             {% else %}
                                 <li><a href="{{ path('app_login') }}">Connexion</a></li>
@@ -42,7 +42,7 @@
                 <nav id="navMenu">
                     <ul>
                         <li><a href="{{ path('index') }}#home">Accueil</a></li>
-                        <li><a href="{{ path('category_all') }}#categoryTitle">Catégorie</a></li>
+                        <li><a href="{{ path('category_all') }}#homeCategoryAll">Catégorie</a></li>
                     </ul>
                 </nav>
             <!--</section>-->

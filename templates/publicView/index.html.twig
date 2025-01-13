@@ -35,14 +35,14 @@
                             </div>
                         </div>
                         <div>
-                            <a href="{{ path('public_illustration', {'id': illustration.id}) }}" class="OpenThumbnail">Voir illustration</a>
+                            <a href="{{ path('public_illustration', {'id': illustration.id}) }}#oneIllustration" class="OpenThumbnail">Voir illustration</a>
                         </div>
                     </div>
                 {% endfor %}
             </article>
 
             <div class="visitCategory">
-                <p><a href="{{ path('illustration_all') }}#homeCategoryAll">Voir les dernières illustrations</a></p>
+                <p><a href="{{ path('illustration_all') }}#titreAllIllustration">Voir les dernières illustrations</a></p>
             </div>
             <!--<h2><a href="">Les plus visités de la semaines</a></h2>
             <article class="illustrationHome">
