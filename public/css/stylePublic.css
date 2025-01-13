@@ -234,16 +234,27 @@ main {
 }
 
 /*--------------------------------------------------  Home  --------------------------------------------------*/
-#home h2, #titreAllIllustration {
+#titreAllIllustration {
   background-color: black;
 }
 
-#home h2 a, #titreAllIllustration {
+#titreAllIllustration {
   color: white;
 }
 
-#home h2 a:hover {
-  color: red;
+#home h2 {
+  margin-top: 5%;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.decorativeFeature {
+  background-color: #3993DD;
+  height: 2px;
+  width: 200px;
+  margin: 1% 0 3% 15%;
 }
 
 .illustrationHome, #oneCategory {
@@ -275,12 +286,18 @@ main {
   align-items: none;
   flex-wrap: wrap;
   gap: 2%;
-  height: 400px;
+  height: 450px;
   background-color: black;
   border-radius: 20px;
-  /*.DivImg{
-    height: 200px;
-  }*/
+}
+.thumbnailHome .DivImg {
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
 }
 .thumbnailHome img {
   border-radius: 20px;
@@ -297,6 +314,29 @@ main {
   background-color: #3993DD;
   border-radius: 5px;
   margin-left: 90px;
+}
+
+.visitCategory {
+  margin-top: 2%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+.visitCategory p {
+  background-color: #3993DD;
+  border-radius: 5px;
+  padding: 15px 0;
+  width: 250px;
+  text-align: center;
+}
+.visitCategory a {
+  color: white;
+}
+.visitCategory a:hover {
+  color: black;
 }
 
 /*--------------------------------------------------  User  --------------------------------------------------*/
@@ -432,7 +472,12 @@ table {
   margin: 15px 0;
 }
 
-#contentIllustration {
+.categoryDescription {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+#contentIllustration, .illustrationCategory {
   border: solid 3px black;
   padding: 5px 0;
   border-radius: 10px;
@@ -527,7 +572,7 @@ table {
   color: white;
 }
 #categoryList h3 a:hover {
-  color: red;
+  color: #3993DD;
 }
 
 footer {

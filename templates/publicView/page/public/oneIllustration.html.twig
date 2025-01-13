@@ -17,16 +17,17 @@
             </div>
             <div class="illustrationCategory">
                 {% if illustration.category is not empty %}
-                    <p>Catégorie: </p>
+                    <p><span class="categoryDescription">Catégorie: </span></p>
                     {% for category in illustration.category%}
                         <p>{{ category.libelle }}</p>
                         <p> / </p>
                     {% endfor %}
                 {% else %}
-                    <p>Catégorie: Sans catégorie</p>
+                    <p><span class="categoryDescription">Catégorie: </span>Sans catégorie</p>
+                    <p>.</p>
                 {% endif %}
             </div>
-            <p id="contentIllustration">{{ illustration.description }}</p>
+            <p id="contentIllustration"><span class="categoryDescription">Description: </span> {{ illustration.description }}</p>
         </section>
     </main>
 

@@ -6,7 +6,8 @@
 
     <main id="home">
         <section>
-            <h2><a href="{{ path('illustration_all') }}">Dernière mise en ligne</a></h2>
+            <h2>Dernière mise en ligne</h2>
+            <div class="decorativeFeature"></div>
             <article class="illustrationHome">
                 {% for illustration in illustrations %}
                     <div class="thumbnail thumbnailHome">
@@ -29,6 +30,7 @@
                                     {% endfor %}
                                 {% else %}
                                     <p>Sans catégorie</p>
+                                    <p>.</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -38,6 +40,10 @@
                     </div>
                 {% endfor %}
             </article>
+
+            <div class="visitCategory">
+                <p><a href="{{ path('illustration_all') }}#homeCategoryAll">Voir les dernières illustrations</a></p>
+            </div>
             <!--<h2><a href="">Les plus visités de la semaines</a></h2>
             <article class="illustrationHome">
             </article>
