@@ -258,10 +258,6 @@ h2 {
   gap: 2%;
 }
 
-.formulaireInsertUser h2 {
-  text-align: center;
-}
-
 .formMain {
   display: flex;
   justify-content: center;
@@ -453,11 +449,55 @@ table {
 /*--------------------------------------------------  Connexion  --------------------------------------------------*/
 .formMain {
   margin-bottom: 3%;
-  height: 60vh;
+  height: 65vh;
 }
 
 .formMain button {
   margin-top: 1%;
+}
+
+/*--------------------------------------------------  Inscription  --------------------------------------------------*/
+label {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2%;
+  width: 550px;
+  margin-top: 2%;
+}
+label p {
+  font-size: 20px;
+  font-weight: bold;
+}
+label input {
+  border: none;
+  border-bottom: solid black 1px;
+  width: 350px;
+  height: 30px;
+  text-align: center;
+}
+
+input[type=date] {
+  background-color: rgba(255, 255, 255, 0.5); /* Blanc semi-transparent */
+  color: rgba(0, 0, 0, 0.7); /* Texte principal */
+}
+
+input[type=date]::placeholder {
+  color: rgba(0, 0, 0, 0.5); /* Placeholder semi-transparent */
+}
+
+#formSubmit {
+  margin-top: 2%;
+  background-color: black;
+  color: white;
+  padding: 1% 2%;
+  border-radius: 5px;
+}
+
+#formSubmit:hover {
+  color: #3993DD;
 }
 
 /*--------------------------------------------------  Illustration  --------------------------------------------------*/

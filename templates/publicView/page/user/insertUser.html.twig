@@ -4,42 +4,43 @@
 
 {% block content %}
 
-    <main>
+    <main id="formulaireInsertUser">
 
         <section class="formulaireInsertUser">
 
             <h2>Nouvelle utilisateur</h2>
+            <div class="decorativeFeature"></div>
 
             <form method="post" id="insertUser" class="formMain">
 
                 <label for="">
                     <p>Nom</p>
-                    <input type="text" name="name">
+                    <input type="text" name="name" placeholder="entrer le nom" required>
                 </label>
 
                 <label for="">
                     <p>Prénom</p>
-                    <input type="text" name="firstname">
+                    <input type="text" name="firstname" placeholder="entrer le prénom" required>
                 </label>
 
                 <label for="">
                     <p>Pseudo</p>
-                    <input type="text" name="pseudo">
+                    <input type="text" name="pseudo" placeholder="entrer le pseudo">
                 </label>
 
                 <label for="">
                     <p>Date de naissance</p>
-                    <input type="date" name="bornAt">
+                    <input type="date" name="bornAt" required>
                 </label>
 
                 <label for="">
                     <p>Email</p>
-                    <input type="email" name="email">
+                    <input type="email" name="email" placeholder="entrer l'email" required>
                 </label>
 
                 <label for="">
                     <p>Mot de passe</p>
-                    <input type="password" name="password">
+                    <input type="password" name="password" placeholder="entrer le mot de passe" required>
                 </label>
 
                 <input type="submit" name="valider" id="formSubmit">

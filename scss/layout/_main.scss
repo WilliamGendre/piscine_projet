@@ -63,10 +63,6 @@ h2{
   @include flex(none);
 }
 
-.formulaireInsertUser h2{
-  text-align: center;
-}
-
 .formMain{
   @include flex(center, column, center);
 }
@@ -216,11 +212,51 @@ table{
 
 .formMain{
   margin-bottom: 3%;
-  height: 60vh;
+  height: 65vh;
 }
 
 .formMain button{
   margin-top: 1%;
+}
+
+/*--------------------------------------------------  Inscription  --------------------------------------------------*/
+
+label{
+  @include flex(space-between);
+  width: 550px;
+  margin-top: 2%;
+  p{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  input{
+    border: none;
+    border-bottom: solid $black 1px;
+    width: 350px;
+    height: 30px;
+    text-align: center;
+  }
+}
+
+input[type="date"] {
+  background-color: rgba(255, 255, 255, 0.5); /* Blanc semi-transparent */
+  color: rgba(0, 0, 0, 0.7); /* Texte principal */
+}
+
+input[type="date"]::placeholder {
+  color: rgba(0, 0, 0, 0.5); /* Placeholder semi-transparent */
+}
+
+#formSubmit{
+  margin-top: 2%;
+  background-color: $black;
+  color: $white;
+  padding: 1% 2%;
+  border-radius: 5px;
+}
+
+#formSubmit:hover{
+  color: $blue;
 }
 
 /*--------------------------------------------------  Illustration  --------------------------------------------------*/
