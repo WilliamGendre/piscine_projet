@@ -32,7 +32,7 @@
                             {% endif %}
                         </td>
                         <td>
-                            <p data-id="{{ illustration.id }}" class="falseDelete">Supprimer</p>
+                            <p data-id="{{ illustration.id }}" class="falseDelete falseDeleteUser">Supprimer</p>
                             <p class="trueDelete" id="deleteIllustration{{ illustration.id }}">êtes-vous sûr de vouloir supprimer l'illustration?<br><br>
                                 <a href="{{ path('admin_deleteIllustration', {'id': illustration.id}) }}">Oui</a><a href="{{ path('admin_illustrations') }}">Non</a></p>
                         </td>

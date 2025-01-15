@@ -28,7 +28,7 @@
                             <td><p>{{ user.bornAt|date('d/m/Y') }}</p></td>
                             <td><p>{{ user.email }}</p></td>
                             <td>
-                                <p data-id="{{ user.id }}" class="falseDelete">Supprimer</p>
+                                <p data-id="{{ user.id }}" class="falseDelete falseDeleteUser">Supprimer</p>
                                 <p class="trueDelete" id="deleteIllustration{{ user.id }}">êtes-vous sûr de vouloir supprimer l'utilisater?<br><br>
                                 <a href="{{ path('admin_deleteUser', {'id': user.id}) }}">Oui</a><a href="{{ path('index_admin') }}">Non</a></p>
                             </td>

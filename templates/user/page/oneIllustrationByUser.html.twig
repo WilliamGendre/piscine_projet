@@ -21,7 +21,7 @@
 
             <div class="illustrationCategory">
                 {% if illustration.category is not empty %}
-                    <p><span class="categoryDescription">Catégorie: </p>
+                    <p class="categoryDescription">Catégorie: </p>
                     {% for category in illustration.category%}
                         <p>{{ category.libelle }}</p>
                         <p> / </p>

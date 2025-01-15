@@ -42,6 +42,10 @@ main{
   text-align: center;
 }
 
+.falseDeleteUser:hover{
+  color: red;
+}
+
 /*--------------------------------------------------  Home  --------------------------------------------------*/
 
 #home h2{
@@ -119,7 +123,7 @@ h2{
   position: relative;
 }
 
-#pageUser div:first-of-type, #navUser ul{
+#newIllustration, #navUser ul{
   @include flex(space-between, row, center, 5px);
   margin: 2% 0;
 }
@@ -206,6 +210,10 @@ h2{
 
 table{
   text-align: center;
+}
+
+#updateUser a:hover, #deleteUser:hover{
+  color: $white;
 }
 
 /*--------------------------------------------------  Connexion  --------------------------------------------------*/
