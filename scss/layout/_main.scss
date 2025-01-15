@@ -25,7 +25,7 @@ main{
   position: relative;
 }
 
-.sectionAdmin .trueDelete{
+.trueDelete{
   border: solid 1px $black;
 }
 
@@ -119,7 +119,7 @@ h2{
   position: relative;
 }
 
-#pageUser div, #navUser ul{
+#pageUser div:first-of-type, #navUser ul{
   @include flex(space-between, row, center, 5px);
   margin: 2% 0;
 }
@@ -276,7 +276,7 @@ input[type="date"]::placeholder {
   border-radius: 10px;
 }
 
-#updateDelete p:first-of-type, #updateDelete p:nth-of-type(2), #updateDeleteUser p{
+#updateDelete p:first-of-type, #updateDelete p:nth-of-type(2), .updateDeleteUse{
   text-align: center;
   border: solid 3px $black;
   padding: 5px 10px;
