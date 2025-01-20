@@ -281,6 +281,7 @@ h2 {
   height: 450px;
   background-color: black;
   border-radius: 20px;
+  overflow: hidden;
 }
 .thumbnailHome .DivImg {
   height: 200px;
@@ -305,7 +306,9 @@ h2 {
 .OpenThumbnail {
   background-color: #3993DD;
   border-radius: 5px;
-  margin-left: 90px;
+  /*margin-left: 90px;*/
+  float: right;
+  margin-right: 5%;
 }
 
 .visitCategory {
@@ -607,6 +610,7 @@ input[type=date]::placeholder {
   text-align: center;
   border-radius: 10px;
   text-transform: capitalize;
+  margin: 2% 0;
 }
 #categoryList h3 a {
   font-size: 22px;
@@ -681,6 +685,26 @@ footer nav ul {
   background-color: #3993DD;
 }
 
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .illustrationHome .thumbnailHome:last-of-type {
+    display: none;
+  }
+  .thumbnail {
+    width: 23%;
+  }
+  body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: none;
+    flex-wrap: wrap;
+    gap: 0;
+    min-height: 100vh;
+  }
+  h2 {
+    margin-top: 10%;
+  }
+}
 @media screen and (max-width: 480px) {
   body {
     display: flex;
@@ -693,7 +717,18 @@ footer nav ul {
   }
   /*------------------------------ Header ------------------------------*/
   h1 {
-    font-size: 30px;
+    font-size: 20px;
+  }
+  i {
+    font-size: 15px;
+  }
+  section section {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: none;
+    flex-wrap: wrap;
+    gap: 0;
   }
   .logo {
     width: 40px;
@@ -753,13 +788,27 @@ footer nav ul {
     display: none;
   }
   #categoryList {
-    background-color: black;
-    width: 200px;
+    /*background-color: $black;*/
+    width: 250px;
     margin: auto;
     border-radius: 10px;
   }
   #categoryList h3 {
     margin: 2% 0;
+    background-color: black;
+    width: 100px;
+  }
+  #categoryList h3 a {
+    font-size: 12px;
+  }
+  label {
+    width: 300px;
+  }
+  label p {
+    font-size: 15px;
+  }
+  label input {
+    width: 150px;
   }
   /*------------------------------ Main User ------------------------------*/
   #pageUser #newIllustration a {
